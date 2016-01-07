@@ -39,6 +39,7 @@
 		73ED16881C3E31EC003B3827 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16871C3E31EC003B3827 /* ColorViewModel.swift */; };
 		73F3FEDA1C3E771B00048DE2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FED91C3E771B00048DE2 /* Router.swift */; };
 		73F3FEDC1C3E835000048DE2 /* JunctionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */; };
+		73F3FEDE1C3E93DF00048DE2 /* JunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		73ED16871C3E31EC003B3827 /* ColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
 		73F3FED91C3E771B00048DE2 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunctionRouter.swift; sourceTree = "<group>"; };
+		73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunctionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */,
+				73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */,
 				7349E74F1C3DD759004A507B /* Path.swift */,
 				7349E7501C3DD759004A507B /* Regex.swift */,
 				7349E7511C3DD759004A507B /* Route.swift */,
@@ -454,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F3FEDE1C3E93DF00048DE2 /* JunctionViewController.swift in Sources */,
 				7349E76A1C3DD759004A507B /* SegmentViewCreator.swift in Sources */,
 				7349E76E1C3DD759004A507B /* URLPath.swift in Sources */,
 				73F3FEDA1C3E771B00048DE2 /* Router.swift in Sources */,
