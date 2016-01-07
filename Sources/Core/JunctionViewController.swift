@@ -8,6 +8,6 @@
 
 import UIKit
 
-public struct JunctionViewController {
+public class JunctionViewController: UITabBarController {
 
 }

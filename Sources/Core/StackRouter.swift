@@ -10,11 +10,14 @@ import UIKit
 
 public struct StackRouter {
 
-    let children: [Route]
+    public let pattern: String
 
-    let viewController: StackViewController
+    public let children: [Route]
 
-    public init(_ children: [Route], _ viewControler: StackViewController) {
+    public let viewController: StackViewController
+
+    public init(_ pattern: String, _ children: [Route], _ viewControler: StackViewController) {
+        self.pattern = pattern
         self.children = children
         self.viewController = viewControler
     }
@@ -42,7 +45,7 @@ extension StackRouter: Router {
         return true
     }
 
-    public func create(path: Path) -> UIViewController {
+    public func create() -> UIViewController {
         return viewController
     }
 

@@ -10,9 +10,11 @@ import UIKit
 
 public protocol Router {
 
+    var pattern: String { get }
+
     func handlesPath(path: Path) -> Bool
 
     func setPath(path: Path) -> Bool
 
-    func create(path: Path) -> UIViewController
+    func create() -> UIViewController
 }

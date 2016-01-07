@@ -10,22 +10,18 @@ import UIKit
 
 public struct JunctionRouter {
 
-    let children: [Route]
+    public let pattern: String
 
-    let viewController: StackViewController
+    public let children: [Router]
 
-    public init(_ children: [Route], _ viewControler: StackViewController) {
+    public let viewController: JunctionViewController
+
+    public init(_ pattern: String, _ children: [Router], _ viewControler: JunctionViewController) {
+        self.pattern = pattern
         self.children = children
         self.viewController = viewControler
-    }
-
-    public func pathStack(path: Path) -> [Segment]? {
-        for child in children {
-            if let stack = child.build(path) {
-                return stack
-            }
-        }
-        return nil
+        let childViewControllers = children.map { $0.create() }
+        viewController.setViewControllers(childViewControllers, animated: false)
     }
 
 }
@@ -33,14 +29,20 @@ public struct JunctionRouter {
 extension JunctionRouter: Router {
 
     public func handlesPath(path: Path) -> Bool {
-        return false
+        return children.contains { $0.handlesPath(path) }
     }
 
     public func setPath(path: Path) -> Bool {
+        for child in children {
+            if child.handlesPath(path) {
+                viewController.selectedViewController = child.create()
+                return true
+            }
+        }
         return false
     }
 
-    public func create(path: Path) -> UIViewController {
+    public func create() -> UIViewController {
         return viewController
     }
 
