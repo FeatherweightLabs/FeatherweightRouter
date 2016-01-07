@@ -13,7 +13,7 @@ func AppCoordinator() -> UIViewController {
 
     var router: StackRouter!
     let navigationController = StackViewController()
-    let store = AppStore(setPath: { router.setPath($0) })
+    let store = AppStore(setPath: { router.setPath(URLPath($0)) })
 
     router = StackRouter([
         Route("welcome", WelcomePresenter(store), [

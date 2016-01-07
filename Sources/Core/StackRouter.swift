@@ -17,10 +17,6 @@ public struct StackRouter {
         self.routerViewController = viewControler
     }
 
-    public func setPath(string: String) -> Bool {
-        return setPath(URLPath(string))
-    }
-
     public func setPath(path: Path) -> Bool { // TODO: Throw
         guard let newStack = pathStack(path) else { return false }
         routerViewController.setStack(newStack)
