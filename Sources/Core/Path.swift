@@ -26,10 +26,13 @@ public protocol Path {
 extension Path {
 
     public func matchesPattern(pattern: String) -> Bool {
-        return Regex(pattern: "^\(pattern)(/|$)").matches(path).count > 0
+        return pattern == "" || Regex(pattern: "^\(pattern)(/|$)").matches(path).count > 0
     }
 
     public func splitBy(pattern: String) -> (match: Path, remainder: Path)? {
+        if pattern == "" {
+            return (mutate(path: "", query: nil, pattern: ""), self)
+        }
         guard let pathMatch = Regex(pattern: "^\(pattern)").match(path) else { return nil }
         guard let pathRemainder = Regex(pattern: "^\(pattern)(/|$)").replace(path) else { return nil }
         return (mutate(path: pathMatch, query: nil, pattern: pattern), mutate(path: pathRemainder, query: nil, pattern: nil))

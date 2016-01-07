@@ -29,12 +29,14 @@ public struct JunctionRouter {
 extension JunctionRouter: Router {
 
     public func handlesPath(path: Path) -> Bool {
-        return children.contains { $0.handlesPath(path) }
+        guard let (_, remainder) = path.splitBy(pattern) else { return false }
+        return children.contains { $0.handlesPath(remainder) }
     }
 
     public func setPath(path: Path) -> Bool {
+        guard let (_, remainder) = path.splitBy(pattern) else { return false }
         for child in children {
-            if child.handlesPath(path) {
+            if child.handlesPath(remainder) {
                 viewController.selectedViewController = child.create()
                 return true
             }

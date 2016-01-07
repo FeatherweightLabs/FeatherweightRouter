@@ -36,11 +36,13 @@ public struct StackRouter {
 extension StackRouter: Router {
 
     public func handlesPath(path: Path) -> Bool {
-        return children.contains { $0.handlesPath(path) }
+        guard let (_, remainder) = path.splitBy(pattern) else { return false }
+        return children.contains { $0.handlesPath(remainder) }
     }
 
     public func setPath(path: Path) -> Bool {
-        guard let newStack = pathStack(path) else { return false }
+        guard let (_, remainder) = path.splitBy(pattern) else { return false }
+        guard let newStack = pathStack(remainder) else { return false }
         viewController.setStack(newStack)
         return true
     }
