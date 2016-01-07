@@ -20,5 +20,5 @@ struct WelcomePresenter: SegmentViewCreator {
     func create(path: Path) -> UIViewController {
         return WelcomeViewController(viewModel: WelcomeViewModel(store: store))
     }
-}
 
+}

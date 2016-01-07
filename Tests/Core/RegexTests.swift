@@ -56,4 +56,5 @@ class RegexUnit: XCTestCase {
         XCTAssertEqual(Regex(pattern: "😎glasses").replace("sun😎glasses"), "sun")
         XCTAssertEqual(Regex(pattern: "^sun").replace("sun😎glasses"), "😎glasses")
     }
+
 }

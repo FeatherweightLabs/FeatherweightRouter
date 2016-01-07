@@ -14,9 +14,11 @@ class RouteTests: XCTestCase {
     struct TestSegmentViewController: SegmentViewController {}
 
     struct TestSegmentViewCreator: SegmentViewCreator {
+
         func create(path: Path) -> SegmentViewController {
             return TestSegmentViewController()
         }
+
     }
 
     struct TestRoute: Route {

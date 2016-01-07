@@ -80,4 +80,5 @@ class ZippedStackTests: XCTestCase {
         XCTAssertEqual(poppedItem, "A")
         XCTAssertEqual(poppedStack, targetStack)
     }
+
 }

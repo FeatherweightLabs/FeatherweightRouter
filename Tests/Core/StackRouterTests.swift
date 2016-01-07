@@ -16,9 +16,11 @@ class StackRouterTests: XCTestCase {
     struct MockSegmentViewController: SegmentViewController {}
 
     struct MockSegmentViewCreator: SegmentViewCreator {
+
         func create(path: Path) -> SegmentViewController {
             return MockSegmentViewController()
         }
+
     }
 
     struct MockRoute: Route {
@@ -42,9 +44,11 @@ class StackRouterTests: XCTestCase {
     struct MockRouterController: StackRouterViewController {
         let internalStack = SegmentStack()
         var stack: [Segment] = []
+
         func setStack(stack: [Segment]) {
             internalStack.stack = stack
         }
+
         init() {}
     }
 
@@ -82,12 +86,12 @@ class StackRouterTests: XCTestCase {
 
     func testSetPath() {
         let tests = [
-            "/a/":      (success: true,  path: "a",    pattern: "a"),
-            "👍":       (success: false, path: "",     pattern: ""),
-            "/a/🦁/":   (success: false, path: "",     pattern: ""),
-            "a/2":      (success: true,  path: "a/2",  pattern: "a/\\d+"),
-            "word":     (success: true,  path: "word", pattern: "\\w+"),
-            "a":        (success: true,  path: "a",    pattern: "a"),
+            "/a/": (success: true, path: "a", pattern: "a"),
+            "👍": (success: false, path: "", pattern: ""),
+            "/a/🦁/": (success: false, path: "", pattern: ""),
+            "a/2": (success: true, path: "a/2", pattern: "a/\\d+"),
+            "word": (success: true, path: "word", pattern: "\\w+"),
+            "a": (success: true, path: "a", pattern: "a"),
             "no match": (success: false, path: "",    pattern: ""),
             "no/match": (success: false, path: "",    pattern: ""),
         ]
@@ -104,4 +108,5 @@ class StackRouterTests: XCTestCase {
             }
         }
     }
+
 }

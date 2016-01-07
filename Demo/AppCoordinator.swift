@@ -9,13 +9,13 @@
 import UIKit
 import Beeline
 
-func AppCoordinator() -> UIViewController {
+func appCoordinator() -> UIViewController {
 
     var router: StackRouter!
     let navigationController = StackViewController()
-    let store = AppStore(setPath: { router.setPath($0) })
+    let store = AppStore(setPath: { router.setPath(URLPath($0)) })
 
-    router = StackRouter([
+    router = StackRouter("", [
         Route("welcome", WelcomePresenter(store), [
             Route("login", LoginPresenter()),
             Route("register", RegistrationPresenter()),
