@@ -6,12 +6,33 @@
 //  Copyright © 2016 Featherweight Labs. All rights reserved.
 //
 
+/**
+ Path: A subsection of a URL that is matchable against a regex.
+
+ Matching always happens from the start of the path and only matches full path segments (a slash or
+ the end of the string).
+ */
 public protocol Path {
 
+    /**
+     Just the path section of a URL. This string should usually be trimmed of slashes at the start
+     and finish for consistancy, but the Path protocol does not enforce it to allow for exact URL's
+     to be reconstructed.
+     */
     var path: String { get }
 
+    /**
+     The query section of a URL. The section after the first question mark. Example,
+     parameter=value.
+     */
     var query: String { get }
 
+    /**
+     Pattern is probably not the best name. This is not a pattern that is matched on, it's just the
+     pattern that happened to match this segment when it was split. It can be used to check if two
+     paths, although different, had the same matcher. Ie, `/users/1/` and `/users/2/` are different,
+     but the would both have the same pattern `/users/\d+/`.
+     */
     var pattern: String { get }
 
     init(_: String)

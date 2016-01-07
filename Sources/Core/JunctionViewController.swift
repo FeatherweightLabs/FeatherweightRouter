@@ -8,6 +8,4 @@
 
 import UIKit
 
-public class JunctionViewController: UITabBarController {
-
-}
+public class JunctionViewController: UITabBarController {}
