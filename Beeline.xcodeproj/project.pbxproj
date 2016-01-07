@@ -196,8 +196,8 @@
 		7349E7791C3DD798004A507B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				7349E7831C3DD82C004A507B /* AppKit */,
 				7349E7841C3DD82C004A507B /* Core */,
+				7349E7831C3DD82C004A507B /* AppKit */,
 				7349E78D1C3DD82C004A507B /* UIKit */,
 				7349E78B1C3DD82C004A507B /* Supporting Files */,
 			);

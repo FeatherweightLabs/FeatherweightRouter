@@ -13,73 +13,42 @@ class StackRouterTests: XCTestCase {
 
     // MARK: Mocks
 
-    struct MockSegmentViewController: SegmentViewController {}
+    class TestPresenter: SegmentViewCreator {
 
-    struct MockSegmentViewCreator: SegmentViewCreator {
+        let viewController = UIViewController()
 
-        func create(path: Path) -> SegmentViewController {
-            return MockSegmentViewController()
+        func create(path: Path) -> UIViewController {
+            return viewController
         }
 
     }
 
-    struct MockRoute: Route {
+    class TestStackViewController: StackViewController {
+        var internalStack: [Segment] = []
 
-        let pattern: String
-        let children: [Route]
-        let segmentViewCreator: SegmentViewCreator
-
-        init(_ pattern: String = "", _ children: [Route] = []) {
-            self.pattern = pattern
-            self.children = children
-            self.segmentViewCreator = MockSegmentViewCreator()
-        }
-    }
-
-    class SegmentStack {
-        var stack: [Segment] = []
-        init() {}
-    }
-
-    struct MockRouterController: StackRouterViewController {
-        let internalStack = SegmentStack()
-        var stack: [Segment] = []
-
-        func setStack(stack: [Segment]) {
-            internalStack.stack = stack
+        override func setStack(newStack: [Segment]) {
+            internalStack = newStack
         }
 
-        init() {}
     }
 
     // MARK: Testables
 
-    struct TestStackRouter: StackRouter {
-        let routes: [Route]
-        let routerViewController: StackRouterViewController
-        init(_ routes: [Route], _ routerViewController: StackRouterViewController) {
-            self.routes = routes
-            self.routerViewController = routerViewController
-        }
-    }
-
-    // MARK: Variables
-
-    var mockRouterController: MockRouterController!
+    var testViewController: TestStackViewController!
     var router: Router!
 
     // MARK: Setup
     override func setUp() {
         super.setUp()
-        mockRouterController = MockRouterController()
-        router = TestStackRouter([
-            MockRoute("a", [
-                MockRoute("\\d+", []),
-                MockRoute("🦁", []),
+        testViewController = TestStackViewController()
+        router = StackRouter("", [
+            Route("a", TestPresenter(), [
+                Route("\\d+", TestPresenter(), []),
+                Route("🦁", TestPresenter(), []),
                 ]),
-            MockRoute("👍", []),
-            MockRoute("\\w+", []),
-            ], mockRouterController)
+            Route("👍", TestPresenter(), []),
+            Route("\\w+", TestPresenter(), []),
+            ], testViewController)
     }
 
     // MARK: - Tests
@@ -96,8 +65,8 @@ class StackRouterTests: XCTestCase {
             "no/match": (success: false, path: "",    pattern: ""),
         ]
         for (path, expected) in tests {
-            let success = router.setPath(path)
-            let stack = mockRouterController.internalStack.stack
+            let success = router.setPath(URLPath(path))
+            let stack = testViewController.internalStack
             let pathResult = stack.map { $0.path.path }.joinWithSeparator("/")
             let patternResult = stack.map { $0.path.pattern }.joinWithSeparator("/")
 

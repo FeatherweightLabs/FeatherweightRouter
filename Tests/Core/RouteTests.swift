@@ -7,81 +7,68 @@
 //
 
 import XCTest
+import UIKit
 @testable import Beeline
 
 class RouteTests: XCTestCase {
 
-    struct TestSegmentViewController: SegmentViewController {}
+    class TestPresenter: SegmentViewCreator {
 
-    struct TestSegmentViewCreator: SegmentViewCreator {
+        let viewController = UIViewController()
 
-        func create(path: Path) -> SegmentViewController {
-            return TestSegmentViewController()
+        func create(path: Path) -> UIViewController {
+            return viewController
         }
 
-    }
-
-    struct TestRoute: Route {
-
-        let pattern: String
-        let children: [Route]
-        let segmentViewCreator: SegmentViewCreator
-
-        init(_ pattern: String = "", children: [Route] = []) {
-            self.pattern = pattern
-            self.children = children
-            self.segmentViewCreator = TestSegmentViewCreator()
-        }
     }
 
     func testInit() {
-        let route: Route? = TestRoute()
+        let route: Route? = Route("", TestPresenter())
         XCTAssert(route != nil)
     }
 
     func testMatch() {
-        let route = TestRoute("home")
-        let matches = route.match(URLPath("home"))
-        XCTAssert(matches)
+        let route = Route("home", TestPresenter())
+        XCTAssert(route.handlesPath(URLPath("home")))
     }
 
     func testMatchEmojiFailure() {
         let thumbsup = "👍"
         XCTAssertFalse(URLPath("👍").matchesPattern("^👍(/|$)"))
         XCTAssertFalse(URLPath("👍").matchesPattern("^\(thumbsup)(/|$)"))
-        XCTAssertFalse(TestRoute("👍").match(URLPath("👍")))
+        XCTAssertFalse(Route("👍", TestPresenter()).handlesPath(URLPath("👍")))
     }
 
     func testBuildFailure() {
-        let route = TestRoute("a", children: [TestRoute("b")])
+        let route = Route("a", TestPresenter(), [Route("b", TestPresenter())])
         XCTAssertNil(route.build(URLPath("NOPE")))
     }
 
     func testBuildFullMatchOnly() {
-        let route = TestRoute("a", children: [TestRoute("b")])
+        let route = Route("a", TestPresenter(), [Route("b", TestPresenter())])
         XCTAssertNil(route.build(URLPath("a/b/c")))
     }
 
     func testBuildSingle() {
-        let route = TestRoute("a", children: [TestRoute("b")])
+        let route = Route("a", TestPresenter(), [Route("b", TestPresenter())])
         let build = route.build(URLPath("a"))
         XCTAssert(build != nil && build!.count == 1)
     }
 
     func testBuildMultiple() {
-        let route = TestRoute("a", children: [TestRoute("b")])
+        let route = Route("a", TestPresenter(), [Route("b", TestPresenter())])
         let build = route.build(URLPath("a/b"))
         XCTAssert(build != nil && build!.count == 2)
     }
 
     func testBuildSingleEmojiFailure() {
-        let route = TestRoute("👍")
+        let route = Route("👍", TestPresenter())
         let build = route.build(URLPath("👍"))
         XCTAssertNil(build)
     }
 
     func testBuildMultipleEmojiFailure() {
-        let route = TestRoute("👍", children: [TestRoute("😎")])
+        let route = Route("👍", TestPresenter(), [Route("😎", TestPresenter())])
         let build = route.build(URLPath("👍/😎"))
         XCTAssertNil(build)
     }
