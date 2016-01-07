@@ -12,6 +12,10 @@ public struct Route {
     public var children: [Route]
     public let segmentViewCreator: SegmentViewCreator
 
+    public func handlesPath(path: Path) -> Bool {
+        return build(path) != nil
+    }
+
     public func build(path: Path) -> [Segment]? {
         guard let (match, remainder) = path.splitBy(pattern) else { return nil }
         let segmentMatch = [Segment(path: match, segmentViewCreator: segmentViewCreator)]

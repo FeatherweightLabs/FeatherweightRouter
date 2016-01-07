@@ -37,6 +37,7 @@
 		73ED167A1C3E2E65003B3827 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */; };
 		73ED16801C3E2F14003B3827 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED167F1C3E2F14003B3827 /* FormViewController.swift */; };
 		73ED16881C3E31EC003B3827 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16871C3E31EC003B3827 /* ColorViewModel.swift */; };
+		73F3FEDA1C3E771B00048DE2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FED91C3E771B00048DE2 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		73ED167F1C3E2F14003B3827 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		73ED16871C3E31EC003B3827 /* ColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
+		73F3FED91C3E771B00048DE2 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				7349E74F1C3DD759004A507B /* Path.swift */,
 				7349E7501C3DD759004A507B /* Regex.swift */,
 				7349E7511C3DD759004A507B /* Route.swift */,
+				73F3FED91C3E771B00048DE2 /* Router.swift */,
 				7349E7541C3DD759004A507B /* Segment.swift */,
 				7349E7561C3DD759004A507B /* SegmentViewCreator.swift */,
 				7349E7571C3DD759004A507B /* StackRouter.swift */,
@@ -432,6 +435,7 @@
 			files = (
 				7349E76A1C3DD759004A507B /* SegmentViewCreator.swift in Sources */,
 				7349E76E1C3DD759004A507B /* URLPath.swift in Sources */,
+				73F3FEDA1C3E771B00048DE2 /* Router.swift in Sources */,
 				7349E7691C3DD759004A507B /* StackViewController.swift in Sources */,
 				7349E7641C3DD759004A507B /* Regex.swift in Sources */,
 				7349E7631C3DD759004A507B /* Path.swift in Sources */,

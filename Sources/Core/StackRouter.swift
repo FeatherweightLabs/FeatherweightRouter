@@ -17,12 +17,6 @@ public struct StackRouter {
         self.routerViewController = viewControler
     }
 
-    public func setPath(path: Path) -> Bool { // TODO: Throw
-        guard let newStack = pathStack(path) else { return false }
-        routerViewController.setStack(newStack)
-        return true
-    }
-
     public func pathStack(path: Path) -> [Segment]? {
         for route in routes {
             if let stack = route.build(path) {
@@ -34,3 +28,15 @@ public struct StackRouter {
     
 }
 
+extension StackRouter: Router {
+
+    public func handlesPath(path: Path) -> Bool {
+        return routes.contains { $0.handlesPath(path) }
+    }
+
+    public func setPath(path: Path) -> Bool { // TODO: Throw
+        guard let newStack = pathStack(path) else { return false }
+        routerViewController.setStack(newStack)
+        return true
+    }
+}
