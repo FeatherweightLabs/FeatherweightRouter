@@ -13,7 +13,6 @@ public class StackViewController: UINavigationController {
     public enum TransitionAction {
         case Pop(Segment)
         case Push(Segment)
-        case Change(Segment)
     }
 
     public var currentStack: [Segment] = []
@@ -42,9 +41,6 @@ public class StackViewController: UINavigationController {
 
             case .Pop:
                 popViewControllerAnimated(true)
-
-            case .Change:
-                fatalError("No change event yet")
             }
         }
     }
