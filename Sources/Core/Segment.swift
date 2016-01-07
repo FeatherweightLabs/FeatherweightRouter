@@ -31,6 +31,7 @@ public struct Segment: Equatable {
     func create() -> UIViewController {
         return segmentViewCreator.create(path)
     }
+
 }
 
 public func ==(lhs: Segment, rhs: Segment) -> Bool {

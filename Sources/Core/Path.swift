@@ -34,6 +34,7 @@ extension Path {
         guard let pathRemainder = Regex(pattern: "^\(pattern)(/|$)").replace(path) else { return nil }
         return (mutate(path: pathMatch, query: nil, pattern: pattern), mutate(path: pathRemainder, query: nil, pattern: nil))
     }
+
 }
 
 public func ==(lhs: Path, rhs: Path) -> Bool {
@@ -53,12 +54,3 @@ public func ==(lhs: Path, rhs: String) -> Bool {
 public func ==<T, U where T: Path, U: Path>(lhs: T, rhs: U) -> Bool {
     return lhs.path == rhs.path
 }
-
-//public func ===<T, U where T: Path, U: Path>(lhs: T, rhs: U) -> Bool {
-//    return lhs.path == rhs.path && lhs.query == rhs.query && lhs.pattern == rhs.pattern
-//}
-
-//public func ==<T where T: Path>(lhs: T, rhs: String) -> Bool {
-//    return lhs.path == rhs
-//}
-

@@ -6,9 +6,13 @@
 //  Copyright © 2016 Featherweight Labs. All rights reserved.
 //
 
+import UIKit
+
 public protocol Router {
 
     func handlesPath(path: Path) -> Bool
 
     func setPath(path: Path) -> Bool
+
+    func create(path: Path) -> UIViewController
 }

@@ -6,37 +6,44 @@
 //  Copyright © 2016 Featherweight Labs. All rights reserved.
 //
 
+import UIKit
+
 public struct StackRouter {
 
-    let routes: [Route]
+    let children: [Route]
 
-    let routerViewController: StackViewController
+    let viewController: StackViewController
 
-    public init(_ routes: [Route], _ viewControler: StackViewController) {
-        self.routes = routes
-        self.routerViewController = viewControler
+    public init(_ children: [Route], _ viewControler: StackViewController) {
+        self.children = children
+        self.viewController = viewControler
     }
 
     public func pathStack(path: Path) -> [Segment]? {
-        for route in routes {
-            if let stack = route.build(path) {
+        for child in children {
+            if let stack = child.build(path) {
                 return stack
             }
         }
         return nil
     }
-    
+
 }
 
 extension StackRouter: Router {
 
     public func handlesPath(path: Path) -> Bool {
-        return routes.contains { $0.handlesPath(path) }
+        return children.contains { $0.handlesPath(path) }
     }
 
-    public func setPath(path: Path) -> Bool { // TODO: Throw
+    public func setPath(path: Path) -> Bool {
         guard let newStack = pathStack(path) else { return false }
-        routerViewController.setStack(newStack)
+        viewController.setStack(newStack)
         return true
     }
+
+    public func create(path: Path) -> UIViewController {
+        return viewController
+    }
+
 }

@@ -34,6 +34,7 @@ class PathUnit: XCTestCase {
         func mutate(path path: String?, query: String?, pattern: String?) -> Path {
             return TestPath(path ?? self.path, query ?? self.path, pattern ?? self.path)
         }
+
     }
 
     // MARK: - Dummys
@@ -141,4 +142,5 @@ class PathUnit: XCTestCase {
     func testEquatableToString() {
         XCTAssert(path == mockString)
     }
+
 }

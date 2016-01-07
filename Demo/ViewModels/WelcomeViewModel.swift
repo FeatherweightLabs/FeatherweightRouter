@@ -29,4 +29,5 @@ struct WelcomeViewModel: ProvidesColor {
     func navigateToRegister() {
         store.dispatchRoute("welcome/register")
     }
+
 }

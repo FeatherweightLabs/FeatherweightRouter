@@ -48,4 +48,5 @@ class URLPathTests: XCTestCase {
         let path = "TESTPATH"
         XCTAssertEqual(URLPath(path), URLPath(path))
     }
+
 }

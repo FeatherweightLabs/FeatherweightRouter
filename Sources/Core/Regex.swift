@@ -37,4 +37,5 @@ struct Regex {
         guard let range = string.rangeOfString(pattern, options: .RegularExpressionSearch) else { return nil }
         return string.stringByReplacingCharactersInRange(range, withString: replacement)
     }
+
 }

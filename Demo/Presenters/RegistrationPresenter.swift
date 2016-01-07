@@ -14,4 +14,5 @@ struct RegistrationPresenter: SegmentViewCreator {
     func create(path: Path) -> UIViewController {
         return FormViewController(ColorViewModel(UIColor.blueColor()))
     }
+
 }

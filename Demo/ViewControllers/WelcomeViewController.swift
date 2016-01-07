@@ -43,4 +43,5 @@ class WelcomeViewController: UIViewController {
     func didClickRegister(button: UIButton) {
         viewModel.navigateToRegister()
     }
+
 }

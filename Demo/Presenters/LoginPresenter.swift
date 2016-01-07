@@ -14,4 +14,5 @@ struct LoginPresenter: SegmentViewCreator {
     func create(path: Path) -> UIViewController {
         return FormViewController(ColorViewModel(UIColor.greenColor()))
     }
+
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Beeline
 
-func AppCoordinator() -> UIViewController {
+func appCoordinator() -> UIViewController {
 
     var router: StackRouter!
     let navigationController = StackViewController()

@@ -36,6 +36,7 @@ public struct ZippedStack<T where T: Equatable>: Equatable {
         return (to.first,
             ZippedStack(common: common, from: from, to: newTo))
     }
+
 }
 
 public func countEqualSequence<T where T: Equatable>(lhs: [T], _ rhs: [T]) -> Int {
