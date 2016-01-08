@@ -31,6 +31,71 @@ The user tapping a back button is easy to capture and generate and action that u
 
 Each view component should be testable and predictable. If any component that makes up the UI is not predictable, then neither is the UI.
 
+## Goal Usage
+
+```swift
+import Beeline
+
+func appRouterFromCreateRouterFuncs<T>() -> Router<T> {
+
+	return junctionRouter(tabBarPresenter(), [
+		stackRouter(navigationBarPresenter(title: "Animals"), [
+			route("animals", animalListPresenter, [
+				route("(?<id>\\w+)", animalPresenter),
+			]),
+		]),
+		stackRouter(navigationBarPresenter(title: "Zoos"), [
+			route("zoos", zooListPresenter, [
+				route("(?<id>\\w+)", zooPresenter),
+			]),
+		]),
+	])
+}
+```
+
+### Alternative usages for discussion
+
+```swift
+func appRoutesFromArray(views: Views) -> Router {
+	return router([
+		"animals": views.animalList,
+		"animals/\\w+": view.animalDetail,
+		"zoos": views.zooList,
+		"zoos/\\w+": views.zooDetail,
+	])
+}
+
+func appRoutesAsClasses<T>() -> Router<T> {
+	return BeelineTabBarController([
+		BeelineNavigationController([
+			AnimalListViewController("animals", [
+				AnimalDetailViewController("(?<id>\\w+)"),
+			]),
+		]),
+		BeelineNavigationController([
+			ZooListViewController("zoos", [
+				ZooDetailViewController("(?<id>\\w+)"),
+			]),
+		]),
+	])
+}
+
+func appRoutesAsClosures<T>() -> Router<T> {
+	return junctionRouter(UITabBarController) { add in
+		add.stackController(UINavigationController) { add in
+			add.route("animals", animalListPresenter) { add in
+				add.route("(?<id>\\w+)", animalDetailPresenter)
+			}
+		}
+		add.stackController(UINavigationController) { add in
+			add.route("zoos", zooListPresenter) { add in
+				add.route("(?<id>\\w+)", zooDetailPresenter)
+			}
+		}
+	}
+}
+```
+
 ## Glossary
 
 - **Path / URL**: A String representing the current view or UI state the application is in. This can include hierarchy and view dependent information as parameters or query values. Ie, viewing a user profile
