@@ -4,6 +4,8 @@ Swift based UIKit and AppKit Router
 
 Beeline is a declarative routing handler that decouples ViewControllers from each other. It follows a Coordinator and Presenter pattern, also referred to as Flow Controllers.
 
+Beeline makes an excellent MVVM wrapper / companion and fits right in with Redux style State Flow and Reactive frameworks.
+
 The Coordinator is constructed by declaring a route hierarchy mapped with a URL structure.
 
 By using mapping UI to URLs, it makes it easy to add automatic URL scheme handling in the future.
