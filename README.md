@@ -1,9 +1,12 @@
 # Beeline
+
 Swift based UIKit and AppKit Router
 
 Beeline is a declarative routing handler that decouples ViewControllers from each other. It follows a Coordinator and Presenter pattern, also referred to as Flow Controllers.
 
 The Coordinator is constructed by declaring a route hierarchy mapped with a URL structure.
+
+By using mapping UI to URLs, it makes it easy to add automatic URL scheme handling in the future.
 
 ## Beeline principles
 
@@ -17,11 +20,9 @@ Given any State value the UI must be **predictable** and **repeatable**.
 
 Displaying the same State on a phone and tablet for example, can result in different UIs. The device dependent state should remain on that device. An OS X and iOS app can use the same State and logic classes and interchange Routers for representing the State.
 
-
 ### Application State encapsulate Path
 
 If the UI is a projection of State, then the current Path should be included in that State too.
-
 
 ### UI can generate actions to update Path values in the State
 
@@ -30,6 +31,10 @@ The user tapping a back button is easy to capture and generate and action that u
 ### All View components are predictable projections of State
 
 Each view component should be testable and predictable. If any component that makes up the UI is not predictable, then neither is the UI.
+
+### Actual State values should be passed into presenters outside of the Routers
+
+Although the UI should be a projection of State + Path only the Path should be passed to the Router when State changes. Using the Router for State propagation ties the Router to the State. Following the single responsibility principle, the Router only needs updates when the Path changes and callbacks to notify State of Path changes caused by the user outside of the standard Routes (ie, user swiped back in a navigation controller).
 
 ## Goal Usage
 
@@ -50,6 +55,15 @@ func appRouterFromCreateRouterFuncs<T>() -> Router<T> {
 			]),
 		]),
 	])
+}
+
+func appCoordinator() -> UIViewController {
+
+	let store = createStore(appReducer, nil)
+	let router = appRouter()
+	store.state.map { $0.route }.subscribe(next: router.setPath)
+
+	return router.build(routerActions(store))
 }
 ```
 
@@ -101,3 +115,15 @@ func appRoutesAsClosures<T>() -> Router<T> {
 - **Path / URL**: A String representing the current view or UI state the application is in. This can include hierarchy and view dependent information as parameters or query values. Ie, viewing a user profile
 - **State**: A stream of values over time.
 - **UI**: User Interface: A visual representation of the State that a user can interact with.
+
+## TODO
+
+In order of achievability:
+
+- [ ] Decide if routes and routers should be interchangeable
+- [ ] Finalise usage specs
+- [ ] Seperate all UIKit coupling into protocols
+- [ ] Extendable router creators
+- [ ] AppKit and TVKit support
+- [ ] Automatic URL scheme support
+
