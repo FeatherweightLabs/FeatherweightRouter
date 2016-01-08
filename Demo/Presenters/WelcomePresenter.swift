@@ -17,8 +17,8 @@ struct WelcomePresenter: SegmentViewCreator {
         self.store = store
     }
 
-    func create(path: Path) -> UIViewController {
-        return WelcomeViewController(viewModel: WelcomeViewModel(store: store))
+    func create(path: Path, dismiss: (Path) -> ()) -> RouterViewController {
+        return WelcomeViewController(WelcomeViewModel(store: store), path: path, dismiss: dismiss)
     }
 }
 

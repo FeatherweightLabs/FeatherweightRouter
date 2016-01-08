@@ -7,27 +7,39 @@
 //
 
 public struct StackRouter {
-
-    let routes: [Route]
-
-    let routerViewController: StackViewController
-
-    public init(_ routes: [Route], _ viewControler: StackViewController) {
-        self.routes = routes
-        self.routerViewController = viewControler
+    public var setPath : (String) -> Bool;
+    public var pathStack : (Path) -> [Segment]?
+    public var dismissViewController: (Path) -> ();
+    
+    public init(
+        setPath: (String) -> Bool,
+        pathStack: (Path) -> [Segment]?,
+        dismissViewController: (Path) -> ()) {
+            self.setPath = setPath;
+            self.pathStack = pathStack;
+            self.dismissViewController = dismissViewController;
     }
+}
 
-    public func setPath(string: String) -> Bool {
-        return setPath(URLPath(string))
+public func createRouter(_ routes: [Route],_ viewControler: StackViewController) -> StackRouter {
+    let routes: [Route] = routes;
+    var routerViewController: StackViewController = viewControler;
+    var previousStack: [Segment] = [];
+    var currentStack: [Segment] = [];
+    
+    func setPath(string: String) -> Bool {
+        return innerSetPath(URLPath(string))
     }
-
-    public func setPath(path: Path) -> Bool { // TODO: Throw
+    
+    func innerSetPath(path: Path) -> Bool { // TODO: Throw
         guard let newStack = pathStack(path) else { return false }
-        routerViewController.setStack(newStack)
+        let tempStack = currentStack;
+        currentStack = routerViewController.setStack(currentStack, newStack: newStack);
+        previousStack = tempStack;
         return true
     }
-
-    public func pathStack(path: Path) -> [Segment]? {
+    
+    func pathStack(path: Path) -> [Segment]? {
         for route in routes {
             if let stack = route.build(path) {
                 return stack
@@ -36,5 +48,16 @@ public struct StackRouter {
         return nil
     }
     
-}
+    func dissmissViewController(path: Path) {
+        currentStack = previousStack;
+    }
+    
+    /**
+    *  Add the dismissViewController to the routerViewController so the stackRouter can be notified when a viewController is being dismissed
+    */
+    routerViewController.dismissViewController = dissmissViewController;
 
+    
+    return StackRouter(setPath: setPath,  pathStack: pathStack, dismissViewController: dissmissViewController);
+
+}

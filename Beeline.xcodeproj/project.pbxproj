@@ -37,6 +37,7 @@
 		73ED167A1C3E2E65003B3827 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */; };
 		73ED16801C3E2F14003B3827 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED167F1C3E2F14003B3827 /* FormViewController.swift */; };
 		73ED16881C3E31EC003B3827 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16871C3E31EC003B3827 /* ColorViewModel.swift */; };
+		BCD9EDA31C3E9EC30096EEE7 /* RouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9EDA21C3E9EC30096EEE7 /* RouterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		73ED167F1C3E2F14003B3827 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		73ED16871C3E31EC003B3827 /* ColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
+		BCD9EDA21C3E9EC30096EEE7 /* RouterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				7349E7571C3DD759004A507B /* StackRouter.swift */,
 				7349E75A1C3DD759004A507B /* URLPath.swift */,
 				7349E75B1C3DD759004A507B /* ZippedStack.swift */,
+				BCD9EDA21C3E9EC30096EEE7 /* RouterViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCD9EDA31C3E9EC30096EEE7 /* RouterViewController.swift in Sources */,
 				7349E76A1C3DD759004A507B /* SegmentViewCreator.swift in Sources */,
 				7349E76E1C3DD759004A507B /* URLPath.swift in Sources */,
 				7349E7691C3DD759004A507B /* SegmentViewController.swift in Sources */,

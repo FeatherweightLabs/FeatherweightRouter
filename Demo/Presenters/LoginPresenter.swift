@@ -11,7 +11,7 @@ import UIKit
 
 struct LoginPresenter: SegmentViewCreator {
 
-    func create(path: Path) -> UIViewController {
-        return FormViewController(ColorViewModel(UIColor.greenColor()))
+    func create(path: Path, dismiss: (Path) -> ()) -> RouterViewController {
+        return FormViewController(ColorViewModel(UIColor.greenColor()), path: path, dismiss: dismiss)
     }
 }

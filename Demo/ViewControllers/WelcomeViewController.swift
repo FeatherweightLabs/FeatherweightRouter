@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Beeline
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIRouterViewController {
 
     let viewModel: WelcomeViewModel
 
@@ -17,10 +18,14 @@ class WelcomeViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    init(viewModel: WelcomeViewModel) {
+    
+    init(_ viewModel: WelcomeViewModel, path: Path, dismiss: (Path) -> ()) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init(path: path, dismiss: dismiss);
+    }
+    
+    internal required init(path: Path, dismiss: (Path) -> Void) {
+        fatalError("init(path:dismiss:) has not been implemented")
     }
 
     override func loadView() {
@@ -37,6 +42,7 @@ class WelcomeViewController: UIViewController {
     }
 
     func didClickLogin(button: UIButton) {
+        print(navigationController?.viewControllers.count);
         viewModel.navigateToLogin()
     }
 

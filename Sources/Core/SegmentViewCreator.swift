@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 public protocol SegmentViewCreator {
-    func create(path: Path) -> UIViewController
+    func create(path: Path, dismiss: (Path) -> ()) -> RouterViewController
 }
