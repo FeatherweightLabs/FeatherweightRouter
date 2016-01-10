@@ -14,10 +14,8 @@ class RouteTests: XCTestCase {
 
     class TestPresenter: SegmentViewCreator {
 
-        let viewController = UIViewController()
-
-        func create(path: Path) -> UIViewController {
-            return viewController
+        func create(path: Path, dismiss: (Path) -> ()) -> RouterViewController {
+            return UIRouterViewController(path: path, dismiss: dismiss)
         }
 
     }

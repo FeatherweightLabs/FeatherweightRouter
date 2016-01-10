@@ -37,6 +37,7 @@
 		73ED167A1C3E2E65003B3827 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */; };
 		73ED16801C3E2F14003B3827 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED167F1C3E2F14003B3827 /* FormViewController.swift */; };
 		73ED16881C3E31EC003B3827 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16871C3E31EC003B3827 /* ColorViewModel.swift */; };
+		73F280061C41F6630043B1BB /* RouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F280051C41F6630043B1BB /* RouterViewController.swift */; };
 		73F3FEDA1C3E771B00048DE2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FED91C3E771B00048DE2 /* Router.swift */; };
 		73F3FEDC1C3E835000048DE2 /* JunctionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */; };
 		73F3FEDE1C3E93DF00048DE2 /* JunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */; };
@@ -88,6 +89,7 @@
 		73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		73ED167F1C3E2F14003B3827 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		73ED16871C3E31EC003B3827 /* ColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
+		73F280051C41F6630043B1BB /* RouterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterViewController.swift; sourceTree = "<group>"; };
 		73F3FED91C3E771B00048DE2 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunctionRouter.swift; sourceTree = "<group>"; };
 		73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunctionViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				7349E7501C3DD759004A507B /* Regex.swift */,
 				7349E7511C3DD759004A507B /* Route.swift */,
 				73F3FED91C3E771B00048DE2 /* Router.swift */,
+				73F280051C41F6630043B1BB /* RouterViewController.swift */,
 				7349E7541C3DD759004A507B /* Segment.swift */,
 				7349E7561C3DD759004A507B /* SegmentViewCreator.swift */,
 				7349E7571C3DD759004A507B /* StackRouter.swift */,
@@ -467,6 +470,7 @@
 				73F3FEDC1C3E835000048DE2 /* JunctionRouter.swift in Sources */,
 				7349E7681C3DD759004A507B /* Segment.swift in Sources */,
 				7349E7651C3DD759004A507B /* Route.swift in Sources */,
+				73F280061C41F6630043B1BB /* RouterViewController.swift in Sources */,
 				7349E76F1C3DD759004A507B /* ZippedStack.swift in Sources */,
 				7349E76B1C3DD759004A507B /* StackRouter.swift in Sources */,
 			);

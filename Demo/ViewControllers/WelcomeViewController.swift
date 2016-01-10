@@ -7,20 +7,25 @@
 //
 
 import UIKit
+import Beeline
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIRouterViewController {
 
     let viewModel: WelcomeViewModel
 
-    private var welcomeView: WelcomeView! { return self.view as! WelcomeView }
+    private var welcomeView: WelcomeView? { return self.view as? WelcomeView }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(viewModel: WelcomeViewModel) {
+    init(_ viewModel: WelcomeViewModel, path: Path, dismiss: (Path) -> ()) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init(path: path, dismiss: dismiss)
+    }
+
+    internal required init(path: Path, dismiss: (Path) -> Void) {
+        fatalError("init(path:dismiss:) has not been implemented")
     }
 
     override func loadView() {
@@ -29,10 +34,12 @@ class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeView.loginButton.addTarget(self, action: Selector("didClickLogin:"),
-            forControlEvents: .TouchUpInside)
-        welcomeView.registerButton.addTarget(self, action: Selector("didClickRegister:"),
-            forControlEvents: .TouchUpInside)
+        if let view = welcomeView {
+            view.loginButton.addTarget(self, action: Selector("didClickLogin:"),
+                forControlEvents: .TouchUpInside)
+            view.registerButton.addTarget(self, action: Selector("didClickRegister:"),
+                forControlEvents: .TouchUpInside)
+        }
         view.backgroundColor = viewModel.backgroundColor
     }
 
