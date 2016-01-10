@@ -12,12 +12,12 @@ public struct StackRouter {
 
     public var setPath: Path -> Bool
     public var pathStack: Path -> [Segment]?
-    public var dismissViewController: Path -> ()
+    public var dismissViewController: DismissCallback
 
     public init(
         setPath: Path -> Bool,
         pathStack: Path -> [Segment]?,
-        dismissViewController: Path -> ()) {
+        dismissViewController: DismissCallback) {
             self.setPath = setPath
             self.pathStack = pathStack
             self.dismissViewController = dismissViewController
@@ -49,7 +49,7 @@ public func createRouter(routes: [Route], _ viewControler: StackViewController) 
         return nil
     }
 
-    func dissmissViewController(path: Path) {
+    func dissmissViewController() {
         currentStack = previousStack
     }
 

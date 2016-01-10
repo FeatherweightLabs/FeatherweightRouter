@@ -28,8 +28,10 @@ public struct Segment: Equatable {
         self.segmentViewCreator = segmentViewCreator
     }
 
-    func create(dismiss: (Path) -> ()) -> RouterViewController {
-        return segmentViewCreator.create(path, dismiss: dismiss)
+    func create(dismiss: DismissCallback) -> RouterViewController {
+        let routerViewController = segmentViewCreator.create(path)
+        routerViewController.onDismiss(dismiss)
+        return routerViewController
     }
 
 }

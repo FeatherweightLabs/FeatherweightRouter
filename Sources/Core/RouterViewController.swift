@@ -12,10 +12,8 @@ import UIKit
  Standard RouterViewController Protocol
  This must be implemented by both the iOS and Appkit implementation
  */
-public protocol RouterViewController {
-    var path: Path {get}
-    var dismiss: (Path) -> Void  {get}
-    init(path: Path, dismiss: (Path) -> Void)
+public protocol RouterViewController: DismissEmitter {
+    init(path: Path)
 }
 
 /**
@@ -23,22 +21,26 @@ public protocol RouterViewController {
  */
 public class UIRouterViewController: UIViewController, RouterViewController {
 
-    public var path: Path
-    public var dismiss: (Path) -> Void
+    public var dismissCallbacks = DismissCallbacks()
 
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public required init(path: Path, dismiss: (Path) -> Void) {
-        self.path = path
-        self.dismiss = dismiss
+    public required init(path: Path) {
         super.init(nibName: nil, bundle: nil)
     }
 
+    /**
+     didMoveToParentViewController is used as the dismiss emitter hook as when using
+     UINavigationController, didMoveToParentViewController is not called until after a user 'swipes'
+     a view away.
+
+     - parameter parent: UIViewController?
+     */
     public override func didMoveToParentViewController(parent: UIViewController?) {
         if parent == nil {
-            dismiss(path)
+            emitDismiss()
         }
         super.didMoveToParentViewController(parent)
     }
