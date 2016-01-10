@@ -11,8 +11,8 @@ import UIKit
 
 struct RegistrationPresenter: SegmentViewCreator {
 
-    func create(path: Path, dismiss: (Path) -> ()) -> RouterViewController {
-        return FormViewController(ColorViewModel(UIColor.blueColor()), path: path, dismiss: dismiss)
+    func create(path: Path) -> RouterViewController {
+        return FormViewController(ColorViewModel(UIColor.blueColor()), path: path)
     }
 
 }

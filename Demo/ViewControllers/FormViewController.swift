@@ -17,12 +17,12 @@ class FormViewController: UIRouterViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(_ viewModel: ProvidesColor, path: Path, dismiss: (Path) -> ()) {
+    init(_ viewModel: ProvidesColor, path: Path) {
         self.viewModel = viewModel
-        super.init(path: path, dismiss: dismiss)
+        super.init(path: path)
     }
 
-    internal required init(path: Path, dismiss: (Path) -> Void) {
+    internal required init(path: Path) {
         fatalError("init(path:dismiss:) has not been implemented")
     }
 

@@ -20,7 +20,7 @@ public enum TransitionAction {
  */
 public protocol StackViewController {
 
-    var dismissViewController: Path -> () { get set }
+    var dismissViewController: DismissCallback { get set }
     func setStack(currentStack: [Segment], newStack: [Segment]) -> [Segment]
     func popFromStack(currentStack: [Segment]) -> [Segment]
     func transitionActions(stack: ZippedStack<Segment>) -> [TransitionAction]
@@ -79,7 +79,7 @@ extension StackViewController {
  */
 public class UIStackViewController: UINavigationController, StackViewController {
 
-    public var dismissViewController: Path -> () = { path in }
+    public var dismissViewController: DismissCallback = { _ in }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -108,9 +108,4 @@ public class UIStackViewController: UINavigationController, StackViewController 
         }
     }
 
-}
-
-
-enum RouterError: ErrorType {
-    case InvalidViewControllerType
 }

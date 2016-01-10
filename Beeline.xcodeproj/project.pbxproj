@@ -32,6 +32,7 @@
 		7349E7BA1C3DDAD2004A507B /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7B61C3DDAD2004A507B /* WelcomePresenter.swift */; };
 		73612BC21C3E129100FD841A /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73612BC01C3E126F00FD841A /* LoginPresenter.swift */; };
 		73612BC51C3E13BD00FD841A /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73612BC31C3E13B100FD841A /* RegistrationPresenter.swift */; };
+		73909B831C42012000F027C7 /* RouterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73909B821C42012000F027C7 /* RouterError.swift */; };
 		73ED16761C3E2DF9003B3827 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16751C3E2DF9003B3827 /* WelcomeView.swift */; };
 		73ED16781C3E2E44003B3827 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */; };
 		73ED167A1C3E2E65003B3827 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */; };
@@ -41,6 +42,8 @@
 		73F3FEDA1C3E771B00048DE2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FED91C3E771B00048DE2 /* Router.swift */; };
 		73F3FEDC1C3E835000048DE2 /* JunctionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */; };
 		73F3FEDE1C3E93DF00048DE2 /* JunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */; };
+		73FA154D1C42A1E000AA691E /* CallbackCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FA154C1C42A1E000AA691E /* CallbackCollection.swift */; };
+		73FA154F1C42A1F900AA691E /* DismissEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FA154E1C42A1F900AA691E /* DismissEmitter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,7 @@
 		7349E7B61C3DDAD2004A507B /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		73612BC01C3E126F00FD841A /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		73612BC31C3E13B100FD841A /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		73909B821C42012000F027C7 /* RouterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterError.swift; sourceTree = "<group>"; };
 		73ED16751C3E2DF9003B3827 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 		73F3FED91C3E771B00048DE2 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunctionRouter.swift; sourceTree = "<group>"; };
 		73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunctionViewController.swift; sourceTree = "<group>"; };
+		73FA154C1C42A1E000AA691E /* CallbackCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallbackCollection.swift; sourceTree = "<group>"; };
+		73FA154E1C42A1F900AA691E /* DismissEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissEmitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,12 +178,15 @@
 		7349E74C1C3DD759004A507B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				73FA154C1C42A1E000AA691E /* CallbackCollection.swift */,
+				73FA154E1C42A1F900AA691E /* DismissEmitter.swift */,
 				73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */,
 				73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */,
 				7349E74F1C3DD759004A507B /* Path.swift */,
 				7349E7501C3DD759004A507B /* Regex.swift */,
 				7349E7511C3DD759004A507B /* Route.swift */,
 				73F3FED91C3E771B00048DE2 /* Router.swift */,
+				73909B821C42012000F027C7 /* RouterError.swift */,
 				73F280051C41F6630043B1BB /* RouterViewController.swift */,
 				7349E7541C3DD759004A507B /* Segment.swift */,
 				7349E7561C3DD759004A507B /* SegmentViewCreator.swift */,
@@ -461,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73F3FEDE1C3E93DF00048DE2 /* JunctionViewController.swift in Sources */,
+				73FA154F1C42A1F900AA691E /* DismissEmitter.swift in Sources */,
 				7349E76A1C3DD759004A507B /* SegmentViewCreator.swift in Sources */,
 				7349E76E1C3DD759004A507B /* URLPath.swift in Sources */,
 				73F3FEDA1C3E771B00048DE2 /* Router.swift in Sources */,
@@ -469,7 +479,9 @@
 				7349E7631C3DD759004A507B /* Path.swift in Sources */,
 				73F3FEDC1C3E835000048DE2 /* JunctionRouter.swift in Sources */,
 				7349E7681C3DD759004A507B /* Segment.swift in Sources */,
+				73909B831C42012000F027C7 /* RouterError.swift in Sources */,
 				7349E7651C3DD759004A507B /* Route.swift in Sources */,
+				73FA154D1C42A1E000AA691E /* CallbackCollection.swift in Sources */,
 				73F280061C41F6630043B1BB /* RouterViewController.swift in Sources */,
 				7349E76F1C3DD759004A507B /* ZippedStack.swift in Sources */,
 				7349E76B1C3DD759004A507B /* StackRouter.swift in Sources */,
