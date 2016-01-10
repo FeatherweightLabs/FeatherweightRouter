@@ -109,8 +109,3 @@ public class UIStackViewController: UINavigationController, StackViewController 
     }
 
 }
-
-
-enum RouterError: ErrorType {
-    case InvalidViewControllerType
-}
