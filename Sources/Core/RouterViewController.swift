@@ -36,14 +36,11 @@ public class UIRouterViewController: UIViewController, RouterViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    public override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        if self.isMovingFromParentViewController() {
-            // Your code...
-            print("I am going back")
+    public override func didMoveToParentViewController(parent: UIViewController?) {
+        if parent == nil {
             dismiss(path)
         }
+        super.didMoveToParentViewController(parent)
     }
 
 }
