@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Beeline
 
-class FormViewController: UIViewController {
+class FormViewController: UIRouterViewController {
 
     let viewModel: ProvidesColor
 
@@ -16,9 +17,13 @@ class FormViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(_ viewModel: ProvidesColor) {
+    init(_ viewModel: ProvidesColor, path: Path, dismiss: (Path) -> ()) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init(path: path, dismiss: dismiss)
+    }
+
+    internal required init(path: Path, dismiss: (Path) -> Void) {
+        fatalError("init(path:dismiss:) has not been implemented")
     }
 
     override func viewDidLoad() {

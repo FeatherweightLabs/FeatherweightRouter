@@ -15,33 +15,35 @@ class StackRouterTests: XCTestCase {
 
     class TestPresenter: SegmentViewCreator {
 
-        let viewController = UIViewController()
-
-        func create(path: Path) -> UIViewController {
-            return viewController
+        func create(path: Path, dismiss: (Path) -> ()) -> RouterViewController {
+            return UIRouterViewController(path: path, dismiss: dismiss)
         }
 
     }
 
     class TestStackViewController: StackViewController {
+        var dismissViewController: Path -> () = { _ in }
         var internalStack: [Segment] = []
 
-        override func setStack(newStack: [Segment]) {
+        func setStack(currentStack: [Segment], newStack: [Segment]) -> [Segment] {
             internalStack = newStack
+            return newStack
         }
+
+        func performActions(actionStack: [TransitionAction]) throws {}
 
     }
 
     // MARK: Testables
 
     var testViewController: TestStackViewController!
-    var router: Router!
+    var router: StackRouter!
 
     // MARK: Setup
     override func setUp() {
         super.setUp()
         testViewController = TestStackViewController()
-        router = StackRouter("", [
+        router = createRouter([
             Route("a", TestPresenter(), [
                 Route("\\d+", TestPresenter(), []),
                 Route("🦁", TestPresenter(), []),

@@ -8,22 +8,31 @@
 
 import UIKit
 
-public class StackViewController: UINavigationController {
+public enum TransitionAction {
+    case Pop(Segment)
+    case Push(Segment)
+    case Change(Segment)
+}
 
-    public enum TransitionAction {
-        case Pop(Segment)
-        case Push(Segment)
-    }
+/**
+ StackViewController.
+ This is basic protocol for the basic stack controller.
+ */
+public protocol StackViewController {
 
-    public var currentStack: [Segment] = []
+    var dismissViewController: Path -> () { get set }
+    func setStack(currentStack: [Segment], newStack: [Segment]) -> [Segment]
+    func popFromStack(currentStack: [Segment]) -> [Segment]
+    func transitionActions(stack: ZippedStack<Segment>) -> [TransitionAction]
+    func performActions(actionStack: [TransitionAction]) throws
+}
 
-    public func setStack(newStack: [Segment]) {
 
-        let transitionStack = ZippedStack(currentStack, newStack)
-        let stackActions = transitionActions(transitionStack)
-        performActions(stackActions)
-        currentStack = newStack
-    }
+/**
+ Contains default implementations of basic navigation related methods
+ */
+ // MARK: - StackViewController
+extension StackViewController {
 
     public func transitionActions(stack: ZippedStack<Segment>) -> [TransitionAction] {
 
@@ -32,17 +41,76 @@ public class StackViewController: UINavigationController {
         return fromActions + toActions
     }
 
-    public func performActions(actionStack: [TransitionAction]) {
+    public func setStack(currentStack: [Segment], newStack: [Segment]) -> [Segment] {
+        let transitionStack = ZippedStack(currentStack, newStack)
+        let stackActions = transitionActions(transitionStack)
+
+        do {
+            try performActions(stackActions)
+        } catch {
+
+        }
+        return newStack
+    }
+
+    /**
+     Used for going back in the stack. As an alternative to the native go back function
+     */
+    public func popFromStack(currentStack: [Segment]) -> [Segment] {
+        var newStack = currentStack
+        newStack.popLast()
+
+        let transitionStack = ZippedStack(currentStack, newStack)
+        let stackActions = transitionActions(transitionStack)
+
+        do {
+            try performActions(stackActions)
+        } catch {
+
+        }
+        return newStack
+    }
+
+}
+
+
+/**
+ UIKit implementation of the StackViewController
+ */
+public class UIStackViewController: UINavigationController, StackViewController {
+
+    public var dismissViewController: Path -> () = { path in }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    public init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    public func performActions(actionStack: [TransitionAction]) throws {
         for action in actionStack {
             switch action {
 
             case .Push(let segment):
-                pushViewController(segment.create(), animated: true)
+                guard let uiViewController = segment.create(dismissViewController) as? UIViewController else {
+                    throw RouterError.InvalidViewControllerType
+                }
+                pushViewController(uiViewController, animated: true)
 
             case .Pop:
                 popViewControllerAnimated(true)
+
+            case .Change:
+                fatalError("No change event yet")
             }
         }
     }
 
+}
+
+
+enum RouterError: ErrorType {
+    case InvalidViewControllerType
 }

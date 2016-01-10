@@ -10,45 +10,52 @@ import UIKit
 
 public struct StackRouter {
 
-    public let pattern: String
+    public var setPath: Path -> Bool
+    public var pathStack: Path -> [Segment]?
+    public var dismissViewController: Path -> ()
 
-    public let children: [Route]
-
-    public let viewController: StackViewController
-
-    public init(_ pattern: String, _ children: [Route], _ viewControler: StackViewController) {
-        self.pattern = pattern
-        self.children = children
-        self.viewController = viewControler
+    public init(
+        setPath: Path -> Bool,
+        pathStack: Path -> [Segment]?,
+        dismissViewController: Path -> ()) {
+            self.setPath = setPath
+            self.pathStack = pathStack
+            self.dismissViewController = dismissViewController
     }
 
-    public func pathStack(path: Path) -> [Segment]? {
-        for child in children {
-            if let stack = child.build(path) {
+}
+
+public func createRouter(routes: [Route], _ viewControler: StackViewController) -> StackRouter {
+
+    let routes: [Route] = routes
+    var routerViewController: StackViewController = viewControler
+    var previousStack: [Segment] = []
+    var currentStack: [Segment] = []
+
+    func setPath(path: Path) -> Bool { // TODO: Throw
+        guard let newStack = pathStack(path) else { return false }
+        let tempStack = currentStack
+        currentStack = routerViewController.setStack(currentStack, newStack: newStack)
+        previousStack = tempStack
+        return true
+    }
+
+    func pathStack(path: Path) -> [Segment]? {
+        for route in routes {
+            if let stack = route.build(path) {
                 return stack
             }
         }
         return nil
     }
 
-}
-
-extension StackRouter: Router {
-
-    public func handlesPath(path: Path) -> Bool {
-        guard let (_, remainder) = path.splitBy(pattern) else { return false }
-        return children.contains { $0.handlesPath(remainder) }
+    func dissmissViewController(path: Path) {
+        currentStack = previousStack
     }
 
-    public func setPath(path: Path) -> Bool {
-        guard let (_, remainder) = path.splitBy(pattern) else { return false }
-        guard let newStack = pathStack(remainder) else { return false }
-        viewController.setStack(newStack)
-        return true
-    }
+    // Add the dismissViewController to the routerViewController so the stackRouter can be notified
+    // when a viewController is being dismissed
+    routerViewController.dismissViewController = dissmissViewController
 
-    public func create() -> UIViewController {
-        return viewController
-    }
-
+    return StackRouter(setPath: setPath,  pathStack: pathStack, dismissViewController: dissmissViewController)
 }

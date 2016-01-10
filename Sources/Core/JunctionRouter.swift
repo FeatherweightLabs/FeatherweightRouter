@@ -10,10 +10,10 @@ import UIKit
 
 /**
  JunctionRoute: A router of routers. Would typically map to a TabBarController.
- 
+
  The junction router is created with a list of child routers and a view controller to delegate to.
- 
- When a path is passed in, child view controllers are search for a match and if found, the matched 
+
+ When a path is passed in, child view controllers are search for a match and if found, the matched
  path segment is popped of the path, the view controller is activated and then finally the remainder
  of the path is passed to the activated router.
  */
