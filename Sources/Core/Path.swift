@@ -42,6 +42,8 @@ public protocol Path {
     func matchesPattern(_: String) -> Bool
 
     func splitBy(_: String) -> (match: Path, remainder: Path)?
+
+    func replace(pattern: String, _ template: String) -> Path?
 }
 
 extension Path {
@@ -57,6 +59,12 @@ extension Path {
         guard let pathMatch = Regex(pattern: "^\(pattern)").match(path) else { return nil }
         guard let pathRemainder = Regex(pattern: "^\(pattern)(/|$)").replace(path) else { return nil }
         return (mutate(path: pathMatch, query: nil, pattern: pattern), mutate(path: pathRemainder, query: nil, pattern: nil))
+    }
+
+    public func replace(pattern: String, _ template: String) -> Path? {
+        guard pattern != "" else { return self }
+        guard let pathRemainder = Regex(pattern: "^\(pattern)(/|$)").replace(path) else { return nil }
+        return mutate(path: pathRemainder, query: nil, pattern: nil)
     }
 
 }

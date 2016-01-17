@@ -194,6 +194,7 @@
 				7349E7551C3DD759004A507B /* StackViewController.swift */,
 				7349E75A1C3DD759004A507B /* URLPath.swift */,
 				7349E75B1C3DD759004A507B /* ZippedStack.swift */,
+				73E964DE1C3FDE2F00A62AA2 /* Refactor.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -475,6 +476,7 @@
 				7349E76E1C3DD759004A507B /* URLPath.swift in Sources */,
 				73F3FEDA1C3E771B00048DE2 /* Router.swift in Sources */,
 				7349E7691C3DD759004A507B /* StackViewController.swift in Sources */,
+				73E964DF1C3FDE2F00A62AA2 /* Refactor.swift in Sources */,
 				7349E7641C3DD759004A507B /* Regex.swift in Sources */,
 				7349E7631C3DD759004A507B /* Path.swift in Sources */,
 				73F3FEDC1C3E835000048DE2 /* JunctionRouter.swift in Sources */,
