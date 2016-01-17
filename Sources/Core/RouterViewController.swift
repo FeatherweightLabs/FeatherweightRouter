@@ -1,6 +1,6 @@
 //
 //  RouterViewController.swift
-//  Beeline
+//  FeatherweightRouter
 //
 //  Created by Aleksander Herforth Rendtslev on 07/01/16.
 //  Copyright © 2016 Featherweight Labs. All rights reserved.

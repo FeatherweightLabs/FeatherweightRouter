@@ -1,16 +1,16 @@
-# Beeline
+# FeatherweightRouter
 
 Swift based UIKit and AppKit Router
 
-Beeline is a declarative routing handler that decouples ViewControllers from each other. It follows a Coordinator and Presenter pattern, also referred to as Flow Controllers.
+FeatherweightRouter is a declarative routing handler that decouples ViewControllers from each other. It follows a Coordinator and Presenter pattern, also referred to as Flow Controllers.
 
-Beeline makes an excellent MVVM wrapper / companion and fits right in with Redux style State Flow and Reactive frameworks.
+FeatherweightRouter makes an excellent MVVM wrapper / companion and fits right in with Redux style State Flow and Reactive frameworks.
 
 The Coordinator is constructed by declaring a route hierarchy mapped with a URL structure.
 
 By using mapping UI to URLs, it makes it easy to add automatic URL scheme handling in the future.
 
-## Beeline principles
+## FeatherweightRouter principles
 
 ### UI is a representation of State
 
@@ -41,7 +41,7 @@ Although the UI should be a projection of State + Path only the Path should be p
 ## Goal Usage
 
 ```swift
-import Beeline
+import FeatherweightRouter
 
 func appRouterFromCreateRouterFuncs<T>() -> Router<T> {
 
@@ -82,13 +82,13 @@ func appRoutesFromArray(views: Views) -> Router {
 }
 
 func appRoutesAsClasses<T>() -> Router<T> {
-	return BeelineTabBarController([
-		BeelineNavigationController([
+	return FeatherweightTabBarController([
+		FeatherweightNavigationController([
 			AnimalListViewController("animals", [
 				AnimalDetailViewController("(?<id>\\w+)"),
 			]),
 		]),
-		BeelineNavigationController([
+		FeatherweightNavigationController([
 			ZooListViewController("zoos", [
 				ZooDetailViewController("(?<id>\\w+)"),
 			]),

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7349E7431C3DD665004A507B /* Beeline.h in Headers */ = {isa = PBXBuildFile; fileRef = 7349E7421C3DD665004A507B /* Beeline.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7349E7431C3DD665004A507B /* FeatherweightRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7349E7421C3DD665004A507B /* FeatherweightRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7349E7631C3DD759004A507B /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E74F1C3DD759004A507B /* Path.swift */; };
 		7349E7641C3DD759004A507B /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7501C3DD759004A507B /* Regex.swift */; };
 		7349E7651C3DD759004A507B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7511C3DD759004A507B /* Route.swift */; };
@@ -17,7 +17,7 @@
 		7349E76B1C3DD759004A507B /* StackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7571C3DD759004A507B /* StackRouter.swift */; };
 		7349E76E1C3DD759004A507B /* URLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E75A1C3DD759004A507B /* URLPath.swift */; };
 		7349E76F1C3DD759004A507B /* ZippedStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E75B1C3DD759004A507B /* ZippedStack.swift */; };
-		7349E77D1C3DD798004A507B /* Beeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349E73F1C3DD665004A507B /* Beeline.framework */; };
+		7349E77D1C3DD798004A507B /* FeatherweightRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349E73F1C3DD665004A507B /* FeatherweightRouter.framework */; };
 		7349E78E1C3DD82C004A507B /* PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7851C3DD82C004A507B /* PathTests.swift */; };
 		7349E78F1C3DD82C004A507B /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7861C3DD82C004A507B /* RegexTests.swift */; };
 		7349E7901C3DD82C004A507B /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7871C3DD82C004A507B /* RouteTests.swift */; };
@@ -52,13 +52,13 @@
 			containerPortal = 7349E7361C3DD665004A507B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7349E73E1C3DD665004A507B;
-			remoteInfo = Beeline;
+			remoteInfo = FeatherweightRouter;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7349E73F1C3DD665004A507B /* Beeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Beeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7349E7421C3DD665004A507B /* Beeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Beeline.h; sourceTree = "<group>"; };
+		7349E73F1C3DD665004A507B /* FeatherweightRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatherweightRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7349E7421C3DD665004A507B /* FeatherweightRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatherweightRouter.h; sourceTree = "<group>"; };
 		7349E7441C3DD665004A507B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7349E74F1C3DD759004A507B /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		7349E7501C3DD759004A507B /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		7349E7571C3DD759004A507B /* StackRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackRouter.swift; sourceTree = "<group>"; };
 		7349E75A1C3DD759004A507B /* URLPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLPath.swift; sourceTree = "<group>"; };
 		7349E75B1C3DD759004A507B /* ZippedStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZippedStack.swift; sourceTree = "<group>"; };
-		7349E7781C3DD798004A507B /* BeelineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeelineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7349E7781C3DD798004A507B /* FeatherweightRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeatherweightRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7349E77C1C3DD798004A507B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7349E7851C3DD82C004A507B /* PathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathTests.swift; sourceTree = "<group>"; };
 		7349E7861C3DD82C004A507B /* RegexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		7349E7881C3DD82C004A507B /* StackRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackRouterTests.swift; sourceTree = "<group>"; };
 		7349E7891C3DD82C004A507B /* URLPathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLPathTests.swift; sourceTree = "<group>"; };
 		7349E78A1C3DD82C004A507B /* ZippedStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZippedStackTests.swift; sourceTree = "<group>"; };
-		7349E7991C3DD963004A507B /* BeelineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeelineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7349E7991C3DD963004A507B /* FeatherweightRouterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeatherweightRouterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7349E79B1C3DD963004A507B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7349E7AC1C3DDA47004A507B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7349E7AE1C3DDA47004A507B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7349E77D1C3DD798004A507B /* Beeline.framework in Frameworks */,
+				7349E77D1C3DD798004A507B /* FeatherweightRouter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +140,9 @@
 		7349E7401C3DD665004A507B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7349E73F1C3DD665004A507B /* Beeline.framework */,
-				7349E7781C3DD798004A507B /* BeelineTests.xctest */,
-				7349E7991C3DD963004A507B /* BeelineDemo.app */,
+				7349E73F1C3DD665004A507B /* FeatherweightRouter.framework */,
+				7349E7781C3DD798004A507B /* FeatherweightRouterTests.xctest */,
+				7349E7991C3DD963004A507B /* FeatherweightRouterDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 		7349E74A1C3DD6BE004A507B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7349E7421C3DD665004A507B /* Beeline.h */,
+				7349E7421C3DD665004A507B /* FeatherweightRouter.h */,
 				7349E7441C3DD665004A507B /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -320,16 +320,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7349E7431C3DD665004A507B /* Beeline.h in Headers */,
+				7349E7431C3DD665004A507B /* FeatherweightRouter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7349E73E1C3DD665004A507B /* Beeline-iOS */ = {
+		7349E73E1C3DD665004A507B /* FeatherweightRouter-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7349E7471C3DD665004A507B /* Build configuration list for PBXNativeTarget "Beeline-iOS" */;
+			buildConfigurationList = 7349E7471C3DD665004A507B /* Build configuration list for PBXNativeTarget "FeatherweightRouter-iOS" */;
 			buildPhases = (
 				7349E73A1C3DD665004A507B /* Sources */,
 				7349E73B1C3DD665004A507B /* Frameworks */,
@@ -341,14 +341,14 @@
 			);
 			dependencies = (
 			);
-			name = "Beeline-iOS";
-			productName = Beeline;
-			productReference = 7349E73F1C3DD665004A507B /* Beeline.framework */;
+			name = "FeatherweightRouter-iOS";
+			productName = FeatherweightRouter;
+			productReference = 7349E73F1C3DD665004A507B /* FeatherweightRouter.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7349E7771C3DD798004A507B /* Beeline-iOSTests */ = {
+		7349E7771C3DD798004A507B /* FeatherweightRouter-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7349E7801C3DD798004A507B /* Build configuration list for PBXNativeTarget "Beeline-iOSTests" */;
+			buildConfigurationList = 7349E7801C3DD798004A507B /* Build configuration list for PBXNativeTarget "FeatherweightRouter-iOSTests" */;
 			buildPhases = (
 				7349E7741C3DD798004A507B /* Sources */,
 				7349E7751C3DD798004A507B /* Frameworks */,
@@ -359,14 +359,14 @@
 			dependencies = (
 				7349E77F1C3DD798004A507B /* PBXTargetDependency */,
 			);
-			name = "Beeline-iOSTests";
-			productName = BeelineTests;
-			productReference = 7349E7781C3DD798004A507B /* BeelineTests.xctest */;
+			name = "FeatherweightRouter-iOSTests";
+			productName = FeatherweightRouterTests;
+			productReference = 7349E7781C3DD798004A507B /* FeatherweightRouterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7349E7981C3DD963004A507B /* Beeline-iOSDemo */ = {
+		7349E7981C3DD963004A507B /* FeatherweightRouter-iOSDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7349E7A81C3DD963004A507B /* Build configuration list for PBXNativeTarget "Beeline-iOSDemo" */;
+			buildConfigurationList = 7349E7A81C3DD963004A507B /* Build configuration list for PBXNativeTarget "FeatherweightRouter-iOSDemo" */;
 			buildPhases = (
 				7349E7951C3DD963004A507B /* Sources */,
 				7349E7961C3DD963004A507B /* Frameworks */,
@@ -376,9 +376,9 @@
 			);
 			dependencies = (
 			);
-			name = "Beeline-iOSDemo";
-			productName = BeelineDemo;
-			productReference = 7349E7991C3DD963004A507B /* BeelineDemo.app */;
+			name = "FeatherweightRouter-iOSDemo";
+			productName = FeatherweightRouterDemo;
+			productReference = 7349E7991C3DD963004A507B /* FeatherweightRouterDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -402,7 +402,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7349E7391C3DD665004A507B /* Build configuration list for PBXProject "Beeline" */;
+			buildConfigurationList = 7349E7391C3DD665004A507B /* Build configuration list for PBXProject "FeatherweightRouter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -415,9 +415,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7349E73E1C3DD665004A507B /* Beeline-iOS */,
-				7349E7771C3DD798004A507B /* Beeline-iOSTests */,
-				7349E7981C3DD963004A507B /* Beeline-iOSDemo */,
+				7349E73E1C3DD665004A507B /* FeatherweightRouter-iOS */,
+				7349E7771C3DD798004A507B /* FeatherweightRouter-iOSTests */,
+				7349E7981C3DD963004A507B /* FeatherweightRouter-iOSDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -526,7 +526,7 @@
 /* Begin PBXTargetDependency section */
 		7349E77F1C3DD798004A507B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7349E73E1C3DD665004A507B /* Beeline-iOS */;
+			target = 7349E73E1C3DD665004A507B /* FeatherweightRouter-iOS */;
 			targetProxy = 7349E77E1C3DD798004A507B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -583,7 +583,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = Beeline;
+				PRODUCT_NAME = FeatherweightRouter;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -625,7 +625,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Beeline;
+				PRODUCT_NAME = FeatherweightRouter;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -644,7 +644,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.Beeline;
+				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouter;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -659,7 +659,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.Beeline;
+				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouter;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -669,8 +669,8 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.BeelineTests;
-				PRODUCT_NAME = BeelineTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouterTests;
+				PRODUCT_NAME = FeatherweightRouterTests;
 			};
 			name = Debug;
 		};
@@ -679,8 +679,8 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.BeelineTests;
-				PRODUCT_NAME = BeelineTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouterTests;
+				PRODUCT_NAME = FeatherweightRouterTests;
 			};
 			name = Release;
 		};
@@ -690,8 +690,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.BeelineDemo;
-				PRODUCT_NAME = BeelineDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouterDemo;
+				PRODUCT_NAME = FeatherweightRouterDemo;
 			};
 			name = Debug;
 		};
@@ -701,15 +701,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.BeelineDemo;
-				PRODUCT_NAME = BeelineDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouterDemo;
+				PRODUCT_NAME = FeatherweightRouterDemo;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7349E7391C3DD665004A507B /* Build configuration list for PBXProject "Beeline" */ = {
+		7349E7391C3DD665004A507B /* Build configuration list for PBXProject "FeatherweightRouter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7349E7451C3DD665004A507B /* Debug */,
@@ -718,7 +718,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7349E7471C3DD665004A507B /* Build configuration list for PBXNativeTarget "Beeline-iOS" */ = {
+		7349E7471C3DD665004A507B /* Build configuration list for PBXNativeTarget "FeatherweightRouter-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7349E7481C3DD665004A507B /* Debug */,
@@ -727,7 +727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7349E7801C3DD798004A507B /* Build configuration list for PBXNativeTarget "Beeline-iOSTests" */ = {
+		7349E7801C3DD798004A507B /* Build configuration list for PBXNativeTarget "FeatherweightRouter-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7349E7811C3DD798004A507B /* Debug */,
@@ -736,7 +736,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7349E7A81C3DD963004A507B /* Build configuration list for PBXNativeTarget "Beeline-iOSDemo" */ = {
+		7349E7A81C3DD963004A507B /* Build configuration list for PBXNativeTarget "FeatherweightRouter-iOSDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7349E7A91C3DD963004A507B /* Debug */,

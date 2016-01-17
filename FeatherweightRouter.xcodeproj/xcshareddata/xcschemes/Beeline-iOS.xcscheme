@@ -3,7 +3,7 @@
    LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
-      parallelizeBuildables = "NO"
+      parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
@@ -15,23 +15,23 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7349E73E1C3DD665004A507B"
-               BuildableName = "Beeline.framework"
-               BlueprintName = "Beeline-iOS"
-               ReferencedContainer = "container:Beeline.xcodeproj">
+               BuildableName = "FeatherweightRouter.framework"
+               BlueprintName = "FeatherweightRouter-iOS"
+               ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7349E7981C3DD963004A507B"
-               BuildableName = "BeelineDemo.app"
-               BlueprintName = "Beeline-iOSDemo"
-               ReferencedContainer = "container:Beeline.xcodeproj">
+               BlueprintIdentifier = "7349E7771C3DD798004A507B"
+               BuildableName = "FeatherweightRouterTests.xctest"
+               BlueprintName = "FeatherweightRouter-iOSTests"
+               ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,19 +48,19 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7349E7771C3DD798004A507B"
-               BuildableName = "BeelineTests.xctest"
-               BlueprintName = "Beeline-iOSTests"
-               ReferencedContainer = "container:Beeline.xcodeproj">
+               BuildableName = "FeatherweightRouterTests.xctest"
+               BlueprintName = "FeatherweightRouter-iOSTests"
+               ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7349E7981C3DD963004A507B"
-            BuildableName = "BeelineDemo.app"
-            BlueprintName = "Beeline-iOSDemo"
-            ReferencedContainer = "container:Beeline.xcodeproj">
+            BlueprintIdentifier = "7349E73E1C3DD665004A507B"
+            BuildableName = "FeatherweightRouter.framework"
+            BlueprintName = "FeatherweightRouter-iOS"
+            ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,16 +76,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7349E7981C3DD963004A507B"
-            BuildableName = "BeelineDemo.app"
-            BlueprintName = "Beeline-iOSDemo"
-            ReferencedContainer = "container:Beeline.xcodeproj">
+            BlueprintIdentifier = "7349E73E1C3DD665004A507B"
+            BuildableName = "FeatherweightRouter.framework"
+            BlueprintName = "FeatherweightRouter-iOS"
+            ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -95,16 +94,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7349E7981C3DD963004A507B"
-            BuildableName = "BeelineDemo.app"
-            BlueprintName = "Beeline-iOSDemo"
-            ReferencedContainer = "container:Beeline.xcodeproj">
+            BlueprintIdentifier = "7349E73E1C3DD665004A507B"
+            BuildableName = "FeatherweightRouter.framework"
+            BlueprintName = "FeatherweightRouter-iOS"
+            ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
