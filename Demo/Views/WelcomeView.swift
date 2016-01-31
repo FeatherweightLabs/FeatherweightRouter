@@ -18,14 +18,14 @@ class WelcomeView: UIView {
     }
 
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
 
-        loginButton.frame = CGRectMake(50, 100, 100, 100)
+        loginButton.frame = CGRect(x: 50, y: 100, width: 100, height: 100)
         loginButton.titleLabel?.text = "Login"
         loginButton.backgroundColor = UIColor.whiteColor()
         addSubview(loginButton)
 
-        registerButton.frame = CGRectMake(50, 250, 100, 100)
+        registerButton.frame = CGRect(x: 50, y: 250, width: 100, height: 100)
         registerButton.titleLabel?.text = "Register"
         registerButton.backgroundColor = UIColor.blackColor()
         addSubview(registerButton)

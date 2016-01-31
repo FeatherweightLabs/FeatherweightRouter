@@ -7,23 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7349E7431C3DD665004A507B /* FeatherweightRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7349E7421C3DD665004A507B /* FeatherweightRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7349E7631C3DD759004A507B /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E74F1C3DD759004A507B /* Path.swift */; };
-		7349E7641C3DD759004A507B /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7501C3DD759004A507B /* Regex.swift */; };
-		7349E7651C3DD759004A507B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7511C3DD759004A507B /* Route.swift */; };
-		7349E7681C3DD759004A507B /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7541C3DD759004A507B /* Segment.swift */; };
-		7349E7691C3DD759004A507B /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7551C3DD759004A507B /* StackViewController.swift */; };
-		7349E76A1C3DD759004A507B /* SegmentViewCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7561C3DD759004A507B /* SegmentViewCreator.swift */; };
-		7349E76B1C3DD759004A507B /* StackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7571C3DD759004A507B /* StackRouter.swift */; };
-		7349E76E1C3DD759004A507B /* URLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E75A1C3DD759004A507B /* URLPath.swift */; };
-		7349E76F1C3DD759004A507B /* ZippedStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E75B1C3DD759004A507B /* ZippedStack.swift */; };
+		731836D81C5D867B00D5E1C6 /* FeatherweightRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 731836C51C5D867B00D5E1C6 /* FeatherweightRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		731836F11C5D86E600D5E1C6 /* PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836EA1C5D86E600D5E1C6 /* PathTests.swift */; };
+		731836F21C5D86E600D5E1C6 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836EB1C5D86E600D5E1C6 /* RegexTests.swift */; };
+		731836F31C5D86E600D5E1C6 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836EC1C5D86E600D5E1C6 /* RouteTests.swift */; };
+		731836F41C5D86E600D5E1C6 /* StackRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836ED1C5D86E600D5E1C6 /* StackRouterTests.swift */; };
+		731836F51C5D86E600D5E1C6 /* URLPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836EE1C5D86E600D5E1C6 /* URLPathTests.swift */; };
+		731836F61C5D86E600D5E1C6 /* ZippedStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836EF1C5D86E600D5E1C6 /* ZippedStackTests.swift */; };
+		731837011C5D87ED00D5E1C6 /* Array+pickFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836F81C5D87ED00D5E1C6 /* Array+pickFirst.swift */; };
+		731837031C5D87ED00D5E1C6 /* Router+junction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836FA1C5D87ED00D5E1C6 /* Router+junction.swift */; };
+		731837041C5D87ED00D5E1C6 /* String+regexMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836FB1C5D87ED00D5E1C6 /* String+regexMatch.swift */; };
+		731837051C5D87ED00D5E1C6 /* Router+route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836FC1C5D87ED00D5E1C6 /* Router+route.swift */; };
+		731837061C5D87ED00D5E1C6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836FD1C5D87ED00D5E1C6 /* Router.swift */; };
+		731837071C5D87ED00D5E1C6 /* RouterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836FE1C5D87ED00D5E1C6 /* RouterDelegate.swift */; };
+		731837081C5D87ED00D5E1C6 /* Router+stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836FF1C5D87ED00D5E1C6 /* Router+stack.swift */; };
 		7349E77D1C3DD798004A507B /* FeatherweightRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349E73F1C3DD665004A507B /* FeatherweightRouter.framework */; };
-		7349E78E1C3DD82C004A507B /* PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7851C3DD82C004A507B /* PathTests.swift */; };
-		7349E78F1C3DD82C004A507B /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7861C3DD82C004A507B /* RegexTests.swift */; };
-		7349E7901C3DD82C004A507B /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7871C3DD82C004A507B /* RouteTests.swift */; };
-		7349E7911C3DD82C004A507B /* StackRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7881C3DD82C004A507B /* StackRouterTests.swift */; };
-		7349E7921C3DD82C004A507B /* URLPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7891C3DD82C004A507B /* URLPathTests.swift */; };
-		7349E7931C3DD82C004A507B /* ZippedStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E78A1C3DD82C004A507B /* ZippedStackTests.swift */; };
 		7349E79C1C3DD963004A507B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E79B1C3DD963004A507B /* AppDelegate.swift */; };
 		7349E7B01C3DDA47004A507B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7349E7AC1C3DDA47004A507B /* Assets.xcassets */; };
 		7349E7B11C3DDA47004A507B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7349E7AD1C3DDA47004A507B /* LaunchScreen.storyboard */; };
@@ -32,18 +30,11 @@
 		7349E7BA1C3DDAD2004A507B /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7349E7B61C3DDAD2004A507B /* WelcomePresenter.swift */; };
 		73612BC21C3E129100FD841A /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73612BC01C3E126F00FD841A /* LoginPresenter.swift */; };
 		73612BC51C3E13BD00FD841A /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73612BC31C3E13B100FD841A /* RegistrationPresenter.swift */; };
-		73909B831C42012000F027C7 /* RouterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73909B821C42012000F027C7 /* RouterError.swift */; };
 		73ED16761C3E2DF9003B3827 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16751C3E2DF9003B3827 /* WelcomeView.swift */; };
 		73ED16781C3E2E44003B3827 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */; };
 		73ED167A1C3E2E65003B3827 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */; };
 		73ED16801C3E2F14003B3827 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED167F1C3E2F14003B3827 /* FormViewController.swift */; };
 		73ED16881C3E31EC003B3827 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16871C3E31EC003B3827 /* ColorViewModel.swift */; };
-		73F280061C41F6630043B1BB /* RouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F280051C41F6630043B1BB /* RouterViewController.swift */; };
-		73F3FEDA1C3E771B00048DE2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FED91C3E771B00048DE2 /* Router.swift */; };
-		73F3FEDC1C3E835000048DE2 /* JunctionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */; };
-		73F3FEDE1C3E93DF00048DE2 /* JunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */; };
-		73FA154D1C42A1E000AA691E /* CallbackCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FA154C1C42A1E000AA691E /* CallbackCollection.swift */; };
-		73FA154F1C42A1F900AA691E /* DismissEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FA154E1C42A1F900AA691E /* DismissEmitter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,26 +48,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		731836C51C5D867B00D5E1C6 /* FeatherweightRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatherweightRouter.h; sourceTree = "<group>"; };
+		731836C61C5D867B00D5E1C6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		731836E91C5D86E600D5E1C6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		731836EA1C5D86E600D5E1C6 /* PathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathTests.swift; sourceTree = "<group>"; };
+		731836EB1C5D86E600D5E1C6 /* RegexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
+		731836EC1C5D86E600D5E1C6 /* RouteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
+		731836ED1C5D86E600D5E1C6 /* StackRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackRouterTests.swift; sourceTree = "<group>"; };
+		731836EE1C5D86E600D5E1C6 /* URLPathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLPathTests.swift; sourceTree = "<group>"; };
+		731836EF1C5D86E600D5E1C6 /* ZippedStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZippedStackTests.swift; sourceTree = "<group>"; };
+		731836F81C5D87ED00D5E1C6 /* Array+pickFirst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+pickFirst.swift"; sourceTree = "<group>"; };
+		731836FA1C5D87ED00D5E1C6 /* Router+junction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Router+junction.swift"; sourceTree = "<group>"; };
+		731836FB1C5D87ED00D5E1C6 /* String+regexMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+regexMatch.swift"; sourceTree = "<group>"; };
+		731836FC1C5D87ED00D5E1C6 /* Router+route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Router+route.swift"; sourceTree = "<group>"; };
+		731836FD1C5D87ED00D5E1C6 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		731836FE1C5D87ED00D5E1C6 /* RouterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterDelegate.swift; sourceTree = "<group>"; };
+		731836FF1C5D87ED00D5E1C6 /* Router+stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Router+stack.swift"; sourceTree = "<group>"; };
 		7349E73F1C3DD665004A507B /* FeatherweightRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FeatherweightRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7349E7421C3DD665004A507B /* FeatherweightRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatherweightRouter.h; sourceTree = "<group>"; };
-		7349E7441C3DD665004A507B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7349E74F1C3DD759004A507B /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
-		7349E7501C3DD759004A507B /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		7349E7511C3DD759004A507B /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		7349E7541C3DD759004A507B /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
-		7349E7551C3DD759004A507B /* StackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
-		7349E7561C3DD759004A507B /* SegmentViewCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentViewCreator.swift; sourceTree = "<group>"; };
-		7349E7571C3DD759004A507B /* StackRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackRouter.swift; sourceTree = "<group>"; };
-		7349E75A1C3DD759004A507B /* URLPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLPath.swift; sourceTree = "<group>"; };
-		7349E75B1C3DD759004A507B /* ZippedStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZippedStack.swift; sourceTree = "<group>"; };
 		7349E7781C3DD798004A507B /* FeatherweightRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeatherweightRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7349E77C1C3DD798004A507B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7349E7851C3DD82C004A507B /* PathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathTests.swift; sourceTree = "<group>"; };
-		7349E7861C3DD82C004A507B /* RegexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
-		7349E7871C3DD82C004A507B /* RouteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
-		7349E7881C3DD82C004A507B /* StackRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackRouterTests.swift; sourceTree = "<group>"; };
-		7349E7891C3DD82C004A507B /* URLPathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLPathTests.swift; sourceTree = "<group>"; };
-		7349E78A1C3DD82C004A507B /* ZippedStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZippedStackTests.swift; sourceTree = "<group>"; };
 		7349E7991C3DD963004A507B /* FeatherweightRouterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeatherweightRouterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7349E79B1C3DD963004A507B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7349E7AC1C3DDA47004A507B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,18 +76,11 @@
 		7349E7B61C3DDAD2004A507B /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		73612BC01C3E126F00FD841A /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		73612BC31C3E13B100FD841A /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
-		73909B821C42012000F027C7 /* RouterError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterError.swift; sourceTree = "<group>"; };
 		73ED16751C3E2DF9003B3827 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		73ED167F1C3E2F14003B3827 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		73ED16871C3E31EC003B3827 /* ColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
-		73F280051C41F6630043B1BB /* RouterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterViewController.swift; sourceTree = "<group>"; };
-		73F3FED91C3E771B00048DE2 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunctionRouter.swift; sourceTree = "<group>"; };
-		73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JunctionViewController.swift; sourceTree = "<group>"; };
-		73FA154C1C42A1E000AA691E /* CallbackCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallbackCollection.swift; sourceTree = "<group>"; };
-		73FA154E1C42A1F900AA691E /* DismissEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissEmitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,106 +132,32 @@
 		7349E7411C3DD665004A507B /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7349E74C1C3DD759004A507B /* Core */,
-				7349E74B1C3DD759004A507B /* AppKit */,
-				7349E75C1C3DD759004A507B /* UIKit */,
-				7349E74A1C3DD6BE004A507B /* Supporting Files */,
+				731836C51C5D867B00D5E1C6 /* FeatherweightRouter.h */,
+				731836C61C5D867B00D5E1C6 /* Info.plist */,
+				731836F81C5D87ED00D5E1C6 /* Array+pickFirst.swift */,
+				731836FD1C5D87ED00D5E1C6 /* Router.swift */,
+				731836FA1C5D87ED00D5E1C6 /* Router+junction.swift */,
+				731836FC1C5D87ED00D5E1C6 /* Router+route.swift */,
+				731836FF1C5D87ED00D5E1C6 /* Router+stack.swift */,
+				731836FE1C5D87ED00D5E1C6 /* RouterDelegate.swift */,
+				731836FB1C5D87ED00D5E1C6 /* String+regexMatch.swift */,
 			);
 			name = Source;
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		7349E74A1C3DD6BE004A507B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7349E7421C3DD665004A507B /* FeatherweightRouter.h */,
-				7349E7441C3DD665004A507B /* Info.plist */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7349E74B1C3DD759004A507B /* AppKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppKit;
-			sourceTree = "<group>";
-		};
-		7349E74C1C3DD759004A507B /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				73FA154C1C42A1E000AA691E /* CallbackCollection.swift */,
-				73FA154E1C42A1F900AA691E /* DismissEmitter.swift */,
-				73F3FEDB1C3E835000048DE2 /* JunctionRouter.swift */,
-				73F3FEDD1C3E93DF00048DE2 /* JunctionViewController.swift */,
-				7349E74F1C3DD759004A507B /* Path.swift */,
-				7349E7501C3DD759004A507B /* Regex.swift */,
-				7349E7511C3DD759004A507B /* Route.swift */,
-				73F3FED91C3E771B00048DE2 /* Router.swift */,
-				73909B821C42012000F027C7 /* RouterError.swift */,
-				73F280051C41F6630043B1BB /* RouterViewController.swift */,
-				7349E7541C3DD759004A507B /* Segment.swift */,
-				7349E7561C3DD759004A507B /* SegmentViewCreator.swift */,
-				7349E7571C3DD759004A507B /* StackRouter.swift */,
-				7349E7551C3DD759004A507B /* StackViewController.swift */,
-				7349E75A1C3DD759004A507B /* URLPath.swift */,
-				7349E75B1C3DD759004A507B /* ZippedStack.swift */,
-				73E964DE1C3FDE2F00A62AA2 /* Refactor.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		7349E75C1C3DD759004A507B /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
 		7349E7791C3DD798004A507B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				7349E7841C3DD82C004A507B /* Core */,
-				7349E7831C3DD82C004A507B /* AppKit */,
-				7349E78D1C3DD82C004A507B /* UIKit */,
-				7349E78B1C3DD82C004A507B /* Supporting Files */,
+				731836E91C5D86E600D5E1C6 /* Info.plist */,
+				731836EA1C5D86E600D5E1C6 /* PathTests.swift */,
+				731836EB1C5D86E600D5E1C6 /* RegexTests.swift */,
+				731836EC1C5D86E600D5E1C6 /* RouteTests.swift */,
+				731836ED1C5D86E600D5E1C6 /* StackRouterTests.swift */,
+				731836EE1C5D86E600D5E1C6 /* URLPathTests.swift */,
+				731836EF1C5D86E600D5E1C6 /* ZippedStackTests.swift */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		7349E7831C3DD82C004A507B /* AppKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppKit;
-			sourceTree = "<group>";
-		};
-		7349E7841C3DD82C004A507B /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				7349E7851C3DD82C004A507B /* PathTests.swift */,
-				7349E7861C3DD82C004A507B /* RegexTests.swift */,
-				7349E7871C3DD82C004A507B /* RouteTests.swift */,
-				7349E7881C3DD82C004A507B /* StackRouterTests.swift */,
-				7349E7891C3DD82C004A507B /* URLPathTests.swift */,
-				7349E78A1C3DD82C004A507B /* ZippedStackTests.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		7349E78B1C3DD82C004A507B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7349E77C1C3DD798004A507B /* Info.plist */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7349E78D1C3DD82C004A507B /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 		7349E79A1C3DD963004A507B /* Demo */ = {
@@ -320,7 +228,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7349E7431C3DD665004A507B /* FeatherweightRouter.h in Headers */,
+				731836D81C5D867B00D5E1C6 /* FeatherweightRouter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +243,7 @@
 				7349E73B1C3DD665004A507B /* Frameworks */,
 				7349E73C1C3DD665004A507B /* Headers */,
 				7349E73D1C3DD665004A507B /* Resources */,
-				AC25C8567E888C9D0137D8D8 /* Tailor */,
+				731837091C5D887C00D5E1C6 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -387,7 +295,7 @@
 		7349E7361C3DD665004A507B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Featherweight Labs";
 				TargetAttributes = {
@@ -449,19 +357,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AC25C8567E888C9D0137D8D8 /* Tailor */ = {
+		731837091C5D887C00D5E1C6 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = Tailor;
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if hash tailor 2>/dev/null; then\n  tailor --except=lower-camel-case\nelse\n  echo \"warning: Please install Tailor from https://tailor.sh\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -470,23 +378,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73F3FEDE1C3E93DF00048DE2 /* JunctionViewController.swift in Sources */,
-				73FA154F1C42A1F900AA691E /* DismissEmitter.swift in Sources */,
-				7349E76A1C3DD759004A507B /* SegmentViewCreator.swift in Sources */,
-				7349E76E1C3DD759004A507B /* URLPath.swift in Sources */,
-				73F3FEDA1C3E771B00048DE2 /* Router.swift in Sources */,
-				7349E7691C3DD759004A507B /* StackViewController.swift in Sources */,
-				73E964DF1C3FDE2F00A62AA2 /* Refactor.swift in Sources */,
-				7349E7641C3DD759004A507B /* Regex.swift in Sources */,
-				7349E7631C3DD759004A507B /* Path.swift in Sources */,
-				73F3FEDC1C3E835000048DE2 /* JunctionRouter.swift in Sources */,
-				7349E7681C3DD759004A507B /* Segment.swift in Sources */,
-				73909B831C42012000F027C7 /* RouterError.swift in Sources */,
-				7349E7651C3DD759004A507B /* Route.swift in Sources */,
-				73FA154D1C42A1E000AA691E /* CallbackCollection.swift in Sources */,
-				73F280061C41F6630043B1BB /* RouterViewController.swift in Sources */,
-				7349E76F1C3DD759004A507B /* ZippedStack.swift in Sources */,
-				7349E76B1C3DD759004A507B /* StackRouter.swift in Sources */,
+				731837041C5D87ED00D5E1C6 /* String+regexMatch.swift in Sources */,
+				731837011C5D87ED00D5E1C6 /* Array+pickFirst.swift in Sources */,
+				731837071C5D87ED00D5E1C6 /* RouterDelegate.swift in Sources */,
+				731837061C5D87ED00D5E1C6 /* Router.swift in Sources */,
+				731837081C5D87ED00D5E1C6 /* Router+stack.swift in Sources */,
+				731837051C5D87ED00D5E1C6 /* Router+route.swift in Sources */,
+				731837031C5D87ED00D5E1C6 /* Router+junction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,12 +392,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7349E78E1C3DD82C004A507B /* PathTests.swift in Sources */,
-				7349E78F1C3DD82C004A507B /* RegexTests.swift in Sources */,
-				7349E7931C3DD82C004A507B /* ZippedStackTests.swift in Sources */,
-				7349E7901C3DD82C004A507B /* RouteTests.swift in Sources */,
-				7349E7911C3DD82C004A507B /* StackRouterTests.swift in Sources */,
-				7349E7921C3DD82C004A507B /* URLPathTests.swift in Sources */,
+				731836F11C5D86E600D5E1C6 /* PathTests.swift in Sources */,
+				731836F21C5D86E600D5E1C6 /* RegexTests.swift in Sources */,
+				731836F61C5D86E600D5E1C6 /* ZippedStackTests.swift in Sources */,
+				731836F31C5D86E600D5E1C6 /* RouteTests.swift in Sources */,
+				731836F41C5D86E600D5E1C6 /* StackRouterTests.swift in Sources */,
+				731836F51C5D86E600D5E1C6 /* URLPathTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,26 +535,29 @@
 		7349E7481C3DD665004A507B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouter;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		7349E7491C3DD665004A507B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouter;
@@ -667,17 +568,20 @@
 		7349E7811C3DD798004A507B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouterTests;
 				PRODUCT_NAME = FeatherweightRouterTests;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		7349E7821C3DD798004A507B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouterTests;
 				PRODUCT_NAME = FeatherweightRouterTests;
