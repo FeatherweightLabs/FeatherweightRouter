@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10102" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="FeatherweightRouterDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="loginButton" destination="HZq-dP-O2m" id="EKj-nf-VPs"/>
+                <outlet property="registerButton" destination="gJe-Yc-EYz" id="BcW-Yb-s8V"/>
+                <outlet property="step2Button" destination="TwV-Za-5bu" id="ctr-Lj-IN3"/>
+                <outlet property="view" destination="3Bi-QQ-jab" id="hou-HI-WeI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3Bi-QQ-jab">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZq-dP-O2m">
+                    <rect key="frame" x="8" y="234" width="584" height="50"/>
+                    <color key="backgroundColor" red="0.94346886873245239" green="0.94360107183456421" blue="0.94342726469039917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="qRv-xu-5b9"/>
+                    </constraints>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" red="0.06313314288854599" green="0.13507765531539917" blue="0.23469799757003784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJe-Yc-EYz">
+                    <rect key="frame" x="8" y="315" width="584" height="50"/>
+                    <color key="backgroundColor" red="0.94346886873245239" green="0.94360107183456421" blue="0.94342726469039917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="VNO-dt-hur"/>
+                    </constraints>
+                    <state key="normal" title="Register">
+                        <color key="titleColor" red="0.06313314288854599" green="0.13507765531539917" blue="0.23469799757003784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ToS-0R-6As">
+                    <rect key="frame" x="8" y="109" width="584" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="74" id="kLU-4w-nA0"/>
+                    </constraints>
+                    <string key="text">😎
+Welcome View</string>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwV-Za-5bu">
+                    <rect key="frame" x="8" y="402" width="584" height="50"/>
+                    <color key="backgroundColor" red="0.94346886870000002" green="0.94360107179999997" blue="0.94342726470000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="rZy-Cn-BLt"/>
+                    </constraints>
+                    <state key="normal" title="Register + Step 2">
+                        <color key="titleColor" red="0.063133142889999994" green="0.13507765529999999" blue="0.23469799760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ToS-0R-6As" firstAttribute="leading" secondItem="HZq-dP-O2m" secondAttribute="leading" id="7UZ-gb-10X"/>
+                <constraint firstItem="TwV-Za-5bu" firstAttribute="leading" secondItem="gJe-Yc-EYz" secondAttribute="leading" id="By9-lS-ZMq"/>
+                <constraint firstItem="HZq-dP-O2m" firstAttribute="leading" secondItem="gJe-Yc-EYz" secondAttribute="leading" id="Imn-ye-rIF"/>
+                <constraint firstItem="HZq-dP-O2m" firstAttribute="top" secondItem="ToS-0R-6As" secondAttribute="bottom" constant="51" id="TjZ-ER-bYK"/>
+                <constraint firstItem="ToS-0R-6As" firstAttribute="trailing" secondItem="HZq-dP-O2m" secondAttribute="trailing" id="ahC-9B-gsD"/>
+                <constraint firstItem="HZq-dP-O2m" firstAttribute="leading" secondItem="3Bi-QQ-jab" secondAttribute="leadingMargin" id="azY-pv-Gtl"/>
+                <constraint firstItem="HZq-dP-O2m" firstAttribute="trailing" secondItem="gJe-Yc-EYz" secondAttribute="trailing" id="eBP-tp-PSg"/>
+                <constraint firstItem="gJe-Yc-EYz" firstAttribute="top" secondItem="HZq-dP-O2m" secondAttribute="bottom" constant="31" id="eDs-t5-NeW"/>
+                <constraint firstItem="TwV-Za-5bu" firstAttribute="top" secondItem="gJe-Yc-EYz" secondAttribute="bottom" constant="37" id="oxT-4h-RxM"/>
+                <constraint firstItem="HZq-dP-O2m" firstAttribute="top" secondItem="3Bi-QQ-jab" secondAttribute="top" constant="234" id="pOx-7z-d9w"/>
+                <constraint firstItem="TwV-Za-5bu" firstAttribute="trailing" secondItem="gJe-Yc-EYz" secondAttribute="trailing" id="vHV-gM-fRb"/>
+                <constraint firstItem="HZq-dP-O2m" firstAttribute="trailing" secondItem="3Bi-QQ-jab" secondAttribute="trailingMargin" id="vKh-pt-aoD"/>
+            </constraints>
+            <point key="canvasLocation" x="498" y="584"/>
+        </view>
+    </objects>
+</document>

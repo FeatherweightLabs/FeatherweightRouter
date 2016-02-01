@@ -9,24 +9,38 @@
 import UIKit
 import FeatherweightRouter
 
+typealias UIRouterDelegate = RouterDelegate<UIViewController>
+
 func appCoordinator() -> UIViewController {
 
-    var router: StackRouter!
-    let store = AppStore(setPath: { router.setPath(URLPath($0)) })
-
+    var router: Router<UIViewController>!
+    let store = AppStore() { router.setRoute($0) }
     router = createRouter(store)
 
     store.setPath("welcome")
 
-    return router.viewController
+    return router.presenter
 }
 
-func createRouter(store: AppStore) -> StackRouter {
 
-    return StackRouter("", [
-        Route("welcome", WelcomePresenter(store), [
-            Route("login", LoginPresenter()),
-            Route("register", RegistrationPresenter()),
-            ]),
-        ], StackViewController())
+func createRouter(store: AppStore) -> Router<UIViewController> {
+
+    return Router(navigationController()).stack([
+        Router(welcomePresenter(store)).route("welcome", children: [
+            Router(registrationPresenter(store)).route("welcome/register", children: [
+                Router(step2Presenter(store)).route("welcome/register/step2"),
+                ]),
+            Router(loginPresenter(store)).route("welcome/login"),
+            ])
+        ])
+}
+
+func navigationController() -> UIRouterDelegate {
+    let navigationController = UINavigationController()
+
+    var delegate: UIRouterDelegate = RouterDelegate() { navigationController }
+    delegate.setChild = { print($0) }
+    delegate.setChildren = { navigationController.setViewControllers($0, animated: true) }
+
+    return delegate
 }

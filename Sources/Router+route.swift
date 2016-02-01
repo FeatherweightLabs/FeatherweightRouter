@@ -8,6 +8,17 @@
 
 extension Router {
 
+    public func route(pattern: String) -> Router<T> {
+
+        var router = self
+
+        router.handlesRoute = { "^\(pattern)$".regexMatch($0) }
+
+        router.getStack = { router.handlesRoute($0) ? [router.delegate.presenter] : nil }
+
+        return router
+    }
+
     public func route(pattern: String, children: [Router<T>]) -> Router<T> {
 
         var router = self

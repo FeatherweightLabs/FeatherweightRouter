@@ -6,19 +6,12 @@
 //  Copyright © 2016 Featherweight Labs. All rights reserved.
 //
 
-import FeatherweightRouter
 import UIKit
+import FeatherweightRouter
 
-struct WelcomePresenter: SegmentViewCreator {
+func welcomePresenter(store: AppStore) -> UIRouterDelegate {
 
-    let store: AppStore
+    let viewController = WelcomeViewController(WelcomeViewModel(store: store))
 
-    init(_ store: AppStore) {
-        self.store = store
-    }
-
-    func create(path: Path) -> RouterViewController {
-        return WelcomeViewController(WelcomeViewModel(store: store), path: path)
-    }
-
+    return RouterDelegate() { viewController }
 }

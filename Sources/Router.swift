@@ -15,7 +15,7 @@ public struct Router<T> {
     public var getStack: String -> [T]? = { _ in nil }
 
     public init(
-        delegate: RouterDelegate<T>,
+        _ delegate: RouterDelegate<T>,
         handlesRoute: (String -> Bool)? = nil,
         setRoute: (String -> Void)? = nil,
         getStack: (String -> [T]?)? = nil) {

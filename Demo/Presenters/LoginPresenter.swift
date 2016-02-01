@@ -6,13 +6,12 @@
 //  Copyright © 2016 Featherweight Labs. All rights reserved.
 //
 
-import FeatherweightRouter
 import UIKit
+import FeatherweightRouter
 
-struct LoginPresenter: SegmentViewCreator {
+func loginPresenter(store: AppStore) -> UIRouterDelegate {
 
-    func create(path: Path) -> RouterViewController {
-        return FormViewController(ColorViewModel(UIColor.greenColor()), path: path)
-    }
+    let viewController = FormViewController(ColorViewModel(UIColor.greenColor()))
 
+    return RouterDelegate() { viewController }
 }

@@ -30,4 +30,8 @@ struct WelcomeViewModel: ProvidesColor {
         store.dispatchRoute("welcome/register")
     }
 
+    func navigateToStep2() {
+        store.dispatchRoute("welcome/register/step2")
+    }
+
 }

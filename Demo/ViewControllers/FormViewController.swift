@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import FeatherweightRouter
 
-class FormViewController: UIRouterViewController {
+class FormViewController: UIViewController {
 
     let viewModel: ProvidesColor
 
@@ -17,13 +16,9 @@ class FormViewController: UIRouterViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(_ viewModel: ProvidesColor, path: Path) {
+    init(_ viewModel: ProvidesColor) {
         self.viewModel = viewModel
-        super.init(path: path)
-    }
-
-    internal required init(path: Path) {
-        fatalError("init(path:dismiss:) has not been implemented")
+        super.init(nibName: nil, bundle: nil)
     }
 
     override func viewDidLoad() {

@@ -7,48 +7,40 @@
 //
 
 import UIKit
-import FeatherweightRouter
 
-class WelcomeViewController: UIRouterViewController {
+class WelcomeViewController: UIViewController {
 
     let viewModel: WelcomeViewModel
 
-    private var welcomeView: WelcomeView? { return self.view as? WelcomeView }
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var step2Button: UIButton!
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(_ viewModel: WelcomeViewModel, path: Path) {
+    init(_ viewModel: WelcomeViewModel) {
         self.viewModel = viewModel
-        super.init(path: path)
-    }
-
-    internal required init(path: Path) {
-        fatalError("init(path:dismiss:) has not been implemented")
-    }
-
-    override func loadView() {
-        view = WelcomeView()
+        super.init(nibName: nil, bundle: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let view = welcomeView {
-            view.loginButton.addTarget(self, action: Selector("didClickLogin:"),
-                forControlEvents: .TouchUpInside)
-            view.registerButton.addTarget(self, action: Selector("didClickRegister:"),
-                forControlEvents: .TouchUpInside)
+
+        loginButton.addAction(.TouchUpInside) { [unowned self] _ in
+            self.viewModel.navigateToLogin()
         }
+
+        registerButton.addAction(.TouchUpInside) { [unowned self] _ in
+            self.viewModel.navigateToRegister()
+        }
+
+        step2Button.addAction(.TouchUpInside) { [unowned self] _ in
+            self.viewModel.navigateToStep2()
+        }
+
         view.backgroundColor = viewModel.backgroundColor
-    }
-
-    func didClickLogin(button: UIButton) {
-        viewModel.navigateToLogin()
-    }
-
-    func didClickRegister(button: UIButton) {
-        viewModel.navigateToRegister()
     }
 
 }

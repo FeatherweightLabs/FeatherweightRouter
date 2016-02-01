@@ -27,7 +27,8 @@
 		73612BC51C3E13BD00FD841A /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73612BC31C3E13B100FD841A /* RegistrationPresenter.swift */; };
 		738389051C5D978E001F844F /* StringRegexMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738389041C5D978E001F844F /* StringRegexMatchTests.swift */; };
 		738389071C5D9889001F844F /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738389061C5D9889001F844F /* RouterTests.swift */; };
-		73ED16761C3E2DF9003B3827 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16751C3E2DF9003B3827 /* WelcomeView.swift */; };
+		7386DBB91C5F50FF00D385A9 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7386DBB81C5F50FF00D385A9 /* WelcomeView.xib */; };
+		7386DBBD1C5F5C3E00D385A9 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386DBBC1C5F5C3E00D385A9 /* UIKit+Extensions.swift */; };
 		73ED16781C3E2E44003B3827 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */; };
 		73ED167A1C3E2E65003B3827 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */; };
 		73ED16801C3E2F14003B3827 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED167F1C3E2F14003B3827 /* FormViewController.swift */; };
@@ -70,7 +71,8 @@
 		73612BC31C3E13B100FD841A /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		738389041C5D978E001F844F /* StringRegexMatchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringRegexMatchTests.swift; sourceTree = "<group>"; };
 		738389061C5D9889001F844F /* RouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
-		73ED16751C3E2DF9003B3827 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		7386DBB81C5F50FF00D385A9 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
+		7386DBBC1C5F5C3E00D385A9 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		73ED167F1C3E2F14003B3827 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
@@ -154,14 +156,15 @@
 		7349E79A1C3DD963004A507B /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				7349E79B1C3DD963004A507B /* AppDelegate.swift */,
 				7349E7B31C3DDAD2004A507B /* AppCoordinator.swift */,
+				7349E79B1C3DD963004A507B /* AppDelegate.swift */,
 				7349E7B51C3DDAD2004A507B /* AppStore.swift */,
+				7386DBBC1C5F5C3E00D385A9 /* UIKit+Extensions.swift */,
 				73612BBD1C3DF1A200FD841A /* Presenters */,
+				7349E7AB1C3DDA47004A507B /* Supporting Files */,
 				73ED16721C3E2DA7003B3827 /* ViewControllers */,
 				73ED16731C3E2DA7003B3827 /* ViewModels */,
 				73ED16741C3E2DA7003B3827 /* Views */,
-				7349E7AB1C3DDA47004A507B /* Supporting Files */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -207,7 +210,7 @@
 		73ED16741C3E2DA7003B3827 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				73ED16751C3E2DF9003B3827 /* WelcomeView.swift */,
+				7386DBB81C5F50FF00D385A9 /* WelcomeView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7349E7B11C3DDA47004A507B /* LaunchScreen.storyboard in Resources */,
+				7386DBB91C5F50FF00D385A9 /* WelcomeView.xib in Resources */,
 				7349E7B01C3DDA47004A507B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,10 +404,10 @@
 				73ED16781C3E2E44003B3827 /* WelcomeViewModel.swift in Sources */,
 				73612BC51C3E13BD00FD841A /* RegistrationPresenter.swift in Sources */,
 				7349E7BA1C3DDAD2004A507B /* WelcomePresenter.swift in Sources */,
+				7386DBBD1C5F5C3E00D385A9 /* UIKit+Extensions.swift in Sources */,
 				7349E7B91C3DDAD2004A507B /* AppStore.swift in Sources */,
 				7349E79C1C3DD963004A507B /* AppDelegate.swift in Sources */,
 				73612BC21C3E129100FD841A /* LoginPresenter.swift in Sources */,
-				73ED16761C3E2DF9003B3827 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

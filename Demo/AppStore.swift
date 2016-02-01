@@ -6,11 +6,11 @@
 //  Copyright © 2016 Featherweight Labs. All rights reserved.
 //
 
-struct AppStore: ProvidesRouteDispatch {
+class AppStore: ProvidesRouteDispatch {
 
-    let setPath: String -> ()
+    var setPath: String -> Void!
 
-    init(setPath: String -> ()) {
+    init(setPath: String -> Void) {
         self.setPath = setPath
     }
 
