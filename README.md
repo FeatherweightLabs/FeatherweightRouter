@@ -1,10 +1,10 @@
 # FeatherweightRouter
 
-Swift based UIKit and AppKit Router
+Swift based Application State Router
 
 FeatherweightRouter is a declarative routing handler that decouples ViewControllers from each other. It follows a Coordinator and Presenter pattern, also referred to as Flow Controllers.
 
-FeatherweightRouter makes an excellent MVVM wrapper / companion and fits right in with Redux style State Flow and Reactive frameworks.
+FeatherweightRouter makes an excellent MVVM companion and fits right in with Redux style State Flow and Reactive frameworks.
 
 The Coordinator is constructed by declaring a route hierarchy mapped with a URL structure.
 
@@ -18,7 +18,7 @@ As the State changes over time, so will the UI projection of that State.
 
 Given any State value the UI must be **predictable** and **repeatable**.
 
-### Device dependent state should be seperate from the Application State.
+### Device dependent state should be separate from the Application State.
 
 Displaying the same State on a phone and tablet for example, can result in different UIs. The device dependent state should remain on that device. An OS X and iOS app can use the same State and logic classes and interchange Routers for representing the State.
 
@@ -43,72 +43,29 @@ Although the UI should be a projection of State + Path only the Path should be p
 ```swift
 import FeatherweightRouter
 
-func appRouterFromCreateRouterFuncs<T>() -> Router<T> {
+func appRouter<Store>(store: Store) -> Router<UIViewController> {
 
-	return junctionRouter(tabBarPresenter(), [
-		stackRouter(navigationBarPresenter(title: "Animals"), [
-			route("animals", animalListPresenter, [
-				route("(?<id>\\w+)", animalPresenter),
-			]),
-		]),
-		stackRouter(navigationBarPresenter(title: "Zoos"), [
-			route("zoos", zooListPresenter, [
-				route("(?<id>\\w+)", zooPresenter),
-			]),
-		]),
-	])
+    return Router(tabBarPresenter()).junction([
+        Router(navigationController(title: "Animals")).stack([
+            Router(animalListPresenter(store)).route("animals", [
+                Router(animalPresenter(store)).route("(?<id>\\w+)"),
+            ]),
+        ]),
+        Router(navigationController(title: "Zoos")).stack([
+            Router(zooListPresenter(store)).route("zoos", [
+                Router(zooPresenter(store)).route("(?<id>\\w+)"),
+            ]),
+        ]),
+    ])
 }
 
 func appCoordinator() -> UIViewController {
 
-	let store = createStore(appReducer, nil)
-	let router = appRouter()
-	store.state.map { $0.route }.subscribe(next: router.setPath)
+    let store = createStore(appReducer, nil)
+    let router = appRouter()
+    store.state.map { $0.route }.subscribe(next: router.setRoute)
 
-	return router.build(routerActions(store))
-}
-```
-
-### Alternative usages for discussion
-
-```swift
-func appRoutesFromArray(views: Views) -> Router {
-	return router([
-		"animals": views.animalList,
-		"animals/\\w+": view.animalDetail,
-		"zoos": views.zooList,
-		"zoos/\\w+": views.zooDetail,
-	])
-}
-
-func appRoutesAsClasses<T>() -> Router<T> {
-	return FeatherweightTabBarController([
-		FeatherweightNavigationController([
-			AnimalListViewController("animals", [
-				AnimalDetailViewController("(?<id>\\w+)"),
-			]),
-		]),
-		FeatherweightNavigationController([
-			ZooListViewController("zoos", [
-				ZooDetailViewController("(?<id>\\w+)"),
-			]),
-		]),
-	])
-}
-
-func appRoutesAsClosures<T>() -> Router<T> {
-	return junctionRouter(UITabBarController) { add in
-		add.stackController(UINavigationController) { add in
-			add.route("animals", animalListPresenter) { add in
-				add.route("(?<id>\\w+)", animalDetailPresenter)
-			}
-		}
-		add.stackController(UINavigationController) { add in
-			add.route("zoos", zooListPresenter) { add in
-				add.route("(?<id>\\w+)", zooDetailPresenter)
-			}
-		}
-	}
+    return router.presenter
 }
 ```
 
@@ -122,10 +79,14 @@ func appRoutesAsClosures<T>() -> Router<T> {
 
 In order of achievability:
 
-- [ ] Decide if routes and routers should be interchangeable
-- [ ] Finalise usage specs
-- [ ] Seperate all UIKit coupling into protocols
-- [ ] Extendable router creators
-- [ ] AppKit and TVKit support
+- [X] Decide if routes and routers should be interchangeable
+    - Use a single extendible Router struct type
+- [X] Finalise usage specs
+    - `Router(presenter:).routerModifier(modifier:paramaters:)`
+- [X] Separate all UIKit coupling into protocols
+    - Foundation is now the only dependency (for regex matching)
+- [X] Extendible router creators
+    - `route`, `junction` and `stack` are all extensions on the `Router` type
+- [X] AppKit and TVKit support
+    - The `Router` accepts a generic presenter type. Even command line presentation is as easy as changing out presenters.
 - [ ] Automatic URL scheme support
-
