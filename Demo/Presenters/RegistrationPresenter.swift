@@ -11,14 +11,12 @@ import FeatherweightRouter
 
 func registrationPresenter(store: AppStore) -> UIRouterDelegate {
 
-    let viewController = FormViewController(ColorViewModel(UIColor.blueColor()))
-
-    return RouterDelegate() { viewController }
-}
-
-func step2Presenter(store: AppStore) -> UIRouterDelegate {
-
-    let viewController = FormViewController(ColorViewModel(UIColor.cyanColor()))
+    let viewController = MockViewController(MockViewModel(
+        store: store,
+        backgroundColor: (128, 128, 255),
+        title: "Registration",
+        callToActionTitle: "Go to '/about/'",
+        callToActionRoute: "about"))
 
     return RouterDelegate() { viewController }
 }

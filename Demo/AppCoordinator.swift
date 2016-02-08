@@ -22,25 +22,20 @@ func appCoordinator() -> UIViewController {
     return router.presenter
 }
 
-
 func createRouter(store: AppStore) -> Router<UIViewController> {
 
-    return Router(navigationController()).stack([
-        Router(welcomePresenter(store)).route("welcome", children: [
-            Router(registrationPresenter(store)).route("welcome/register", children: [
-                Router(step2Presenter(store)).route("welcome/register/step2"),
-                ]),
-            Router(loginPresenter(store)).route("welcome/login"),
-            ])
+    return Router(tabBarPresenter()).junction([
+
+        Router(navigationPresenter("Welcome")).stack([
+            Router(welcomePresenter(store)).route("welcome", children: [
+                Router(registrationPresenter(store)).route("welcome/register", children: [
+                    Router(step2Presenter(store)).route("welcome/register/step2"),
+                    ]),
+                Router(loginPresenter(store)).route("welcome/login"),
+                ])
+            ]),
+
+        Router(aboutPresenter(store)).route("about"),
+
         ])
-}
-
-func navigationController() -> UIRouterDelegate {
-    let navigationController = UINavigationController()
-
-    var delegate: UIRouterDelegate = RouterDelegate() { navigationController }
-    delegate.setChild = { print($0) }
-    delegate.setChildren = { navigationController.setViewControllers($0, animated: true) }
-
-    return delegate
 }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7317777C1C68D44600806D29 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731777741C68D0CF00806D29 /* AboutPresenter.swift */; };
+		7317777D1C68D44B00806D29 /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731777761C68D0F000806D29 /* MockViewController.swift */; };
+		7317777E1C68D44F00806D29 /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731777781C68D14900806D29 /* MockViewModel.swift */; };
+		7317777F1C68D45400806D29 /* MockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7317777A1C68D25E00806D29 /* MockView.xib */; };
+		731777811C68D88800806D29 /* NavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731777801C68D88800806D29 /* NavigationPresenter.swift */; };
+		731777831C68D8CB00806D29 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731777821C68D8CB00806D29 /* TabBarPresenter.swift */; };
+		731777851C68D90F00806D29 /* Step2Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731777841C68D90F00806D29 /* Step2Presenter.swift */; };
 		731836D81C5D867B00D5E1C6 /* FeatherweightRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 731836C51C5D867B00D5E1C6 /* FeatherweightRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		731837011C5D87ED00D5E1C6 /* Array+pickFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836F81C5D87ED00D5E1C6 /* Array+pickFirst.swift */; };
 		731837031C5D87ED00D5E1C6 /* Router+junction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731836FA1C5D87ED00D5E1C6 /* Router+junction.swift */; };
@@ -31,8 +38,6 @@
 		7386DBBD1C5F5C3E00D385A9 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386DBBC1C5F5C3E00D385A9 /* UIKit+Extensions.swift */; };
 		73ED16781C3E2E44003B3827 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */; };
 		73ED167A1C3E2E65003B3827 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */; };
-		73ED16801C3E2F14003B3827 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED167F1C3E2F14003B3827 /* FormViewController.swift */; };
-		73ED16881C3E31EC003B3827 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16871C3E31EC003B3827 /* ColorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		731777741C68D0CF00806D29 /* AboutPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
+		731777761C68D0F000806D29 /* MockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		731777781C68D14900806D29 /* MockViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
+		7317777A1C68D25E00806D29 /* MockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MockView.xib; sourceTree = "<group>"; };
+		731777801C68D88800806D29 /* NavigationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPresenter.swift; sourceTree = "<group>"; };
+		731777821C68D8CB00806D29 /* TabBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		731777841C68D90F00806D29 /* Step2Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step2Presenter.swift; sourceTree = "<group>"; };
 		731836C51C5D867B00D5E1C6 /* FeatherweightRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatherweightRouter.h; sourceTree = "<group>"; };
 		731836C61C5D867B00D5E1C6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		731836E91C5D86E600D5E1C6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,8 +87,6 @@
 		7386DBBC1C5F5C3E00D385A9 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		73ED167F1C3E2F14003B3827 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
-		73ED16871C3E31EC003B3827 /* ColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +192,12 @@
 		73612BBD1C3DF1A200FD841A /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				731777741C68D0CF00806D29 /* AboutPresenter.swift */,
 				73612BC01C3E126F00FD841A /* LoginPresenter.swift */,
+				731777801C68D88800806D29 /* NavigationPresenter.swift */,
 				73612BC31C3E13B100FD841A /* RegistrationPresenter.swift */,
+				731777841C68D90F00806D29 /* Step2Presenter.swift */,
+				731777821C68D8CB00806D29 /* TabBarPresenter.swift */,
 				7349E7B61C3DDAD2004A507B /* WelcomePresenter.swift */,
 			);
 			path = Presenters;
@@ -192,7 +206,7 @@
 		73ED16721C3E2DA7003B3827 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				73ED167F1C3E2F14003B3827 /* FormViewController.swift */,
+				731777761C68D0F000806D29 /* MockViewController.swift */,
 				73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -201,7 +215,7 @@
 		73ED16731C3E2DA7003B3827 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				73ED16871C3E31EC003B3827 /* ColorViewModel.swift */,
+				731777781C68D14900806D29 /* MockViewModel.swift */,
 				73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */,
 			);
 			path = ViewModels;
@@ -210,6 +224,7 @@
 		73ED16741C3E2DA7003B3827 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7317777A1C68D25E00806D29 /* MockView.xib */,
 				7386DBB81C5F50FF00D385A9 /* WelcomeView.xib */,
 			);
 			path = Views;
@@ -345,6 +360,7 @@
 			files = (
 				7349E7B11C3DDA47004A507B /* LaunchScreen.storyboard in Resources */,
 				7386DBB91C5F50FF00D385A9 /* WelcomeView.xib in Resources */,
+				7317777F1C68D45400806D29 /* MockView.xib in Resources */,
 				7349E7B01C3DDA47004A507B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,13 +413,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73ED16801C3E2F14003B3827 /* FormViewController.swift in Sources */,
 				73ED167A1C3E2E65003B3827 /* WelcomeViewController.swift in Sources */,
-				73ED16881C3E31EC003B3827 /* ColorViewModel.swift in Sources */,
 				7349E7B71C3DDAD2004A507B /* AppCoordinator.swift in Sources */,
+				731777831C68D8CB00806D29 /* TabBarPresenter.swift in Sources */,
+				7317777E1C68D44F00806D29 /* MockViewModel.swift in Sources */,
 				73ED16781C3E2E44003B3827 /* WelcomeViewModel.swift in Sources */,
 				73612BC51C3E13BD00FD841A /* RegistrationPresenter.swift in Sources */,
+				7317777C1C68D44600806D29 /* AboutPresenter.swift in Sources */,
+				731777811C68D88800806D29 /* NavigationPresenter.swift in Sources */,
 				7349E7BA1C3DDAD2004A507B /* WelcomePresenter.swift in Sources */,
+				7317777D1C68D44B00806D29 /* MockViewController.swift in Sources */,
+				731777851C68D90F00806D29 /* Step2Presenter.swift in Sources */,
 				7386DBBD1C5F5C3E00D385A9 /* UIKit+Extensions.swift in Sources */,
 				7349E7B91C3DDAD2004A507B /* AppStore.swift in Sources */,
 				7349E79C1C3DD963004A507B /* AppDelegate.swift in Sources */,

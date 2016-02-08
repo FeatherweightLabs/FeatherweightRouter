@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ProvidesColor {
+    var backgroundColor: (Int, Int, Int) { get }
+}
+
 class WelcomeViewController: UIViewController {
 
     let viewModel: WelcomeViewModel
@@ -23,6 +27,7 @@ class WelcomeViewController: UIViewController {
     init(_ viewModel: WelcomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        title = "Featherweight Router 👌"
     }
 
     override func viewDidLoad() {
@@ -40,7 +45,11 @@ class WelcomeViewController: UIViewController {
             self.viewModel.navigateToStep2()
         }
 
-        view.backgroundColor = viewModel.backgroundColor
+        view.backgroundColor = UIColor(
+            red: CGFloat(viewModel.backgroundColor.0) / 255,
+            green: CGFloat(viewModel.backgroundColor.1) / 255,
+            blue: CGFloat(viewModel.backgroundColor.2) / 255,
+            alpha: 1)
     }
 
 }

@@ -17,12 +17,13 @@ class ActionTrampoline<T>: NSObject {
         self.action = action
     }
 
+    // swiftlint:disable force_cast
     @objc func action(sender: UIControl) {
         action(sender as! T)
     }
 }
 
-let UIControlActionFunctionProtocolAssociatedObjectKey = UnsafeMutablePointer<Int8>.alloc(1)
+let uiControlAssociatedFunctionObject = UnsafeMutablePointer<Int8>.alloc(1)
 
 protocol UIControlActionFunctionProtocol {}
 
@@ -31,7 +32,7 @@ extension UIControlActionFunctionProtocol where Self: UIControl {
     func addAction(events: UIControlEvents, _ action: Self -> Void) {
         let trampoline = ActionTrampoline(action: action)
         self.addTarget(trampoline, action: "action:", forControlEvents: events)
-        objc_setAssociatedObject(self, UIControlActionFunctionProtocolAssociatedObjectKey,
+        objc_setAssociatedObject(self, uiControlAssociatedFunctionObject,
                                        trampoline, .OBJC_ASSOCIATION_RETAIN)
     }
 }

@@ -6,15 +6,13 @@
 //  Copyright © 2016 Featherweight Labs. All rights reserved.
 //
 
-import UIKit
-
 protocol ProvidesRouteDispatch {
     func dispatchRoute(_: String)
 }
 
 struct WelcomeViewModel: ProvidesColor {
 
-    let backgroundColor = UIColor.purpleColor()
+    var backgroundColor = (192, 0, 192)
 
     let store: ProvidesRouteDispatch
 
