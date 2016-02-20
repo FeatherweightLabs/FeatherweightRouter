@@ -8,18 +8,19 @@
 
 extension Router {
 
-    public func route(pattern: String) -> Router<T> {
+    /**
+     Route extension
 
-        var router = self
+     A named destination. Unlike the Junction and Stack, Route is a valid endpoint. To drive to
+     town, there may be multiple routes with varying junctions and paths to take, but the
+     destination will remain the same.
 
-        router.handlesRoute = { "^\(pattern)$".regexMatch($0) }
+     - parameter pattern: A String containing a regex that possibly matches to provided paths.
+     - parameter children: Array of little Router children.
 
-        router.getStack = { router.handlesRoute($0) ? [router.delegate.presenter] : nil }
-
-        return router
-    }
-
-    public func route(pattern: String, children: [Router<T>]) -> Router<T> {
+     - returns: A customised copy of Router<T>
+     */
+    public func route(pattern: String, children: [Router<T>] = []) -> Router<T> {
 
         var router = self
         let matchPattern = "^\(pattern)$"
@@ -46,5 +47,4 @@ extension Router {
 
         return router
     }
-
 }

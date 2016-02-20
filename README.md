@@ -1,16 +1,16 @@
-# FeatherweightRouter
+# Featherweight Router
 
 Swift based Application State Router
 
-FeatherweightRouter is a declarative routing handler that decouples ViewControllers from each other. It follows a Coordinator and Presenter pattern, also referred to as Flow Controllers.
+Featherweight Router is a declarative routing handler that decouples ViewControllers from each other. It follows a Coordinator and Presenter pattern, also referred to as Flow Controllers.
 
-FeatherweightRouter makes an excellent MVVM companion and fits right in with Redux style State Flow and Reactive frameworks.
+Featherweight Router makes an excellent MVVM companion and fits right in with Redux style State Flow and Reactive frameworks.
 
 The Coordinator is constructed by declaring a route hierarchy mapped with a URL structure.
 
 By using mapping UI to URLs, it makes it easy to add automatic URL scheme handling in the future.
 
-## FeatherweightRouter principles
+## Principle Concepts
 
 ### UI is a representation of State
 
@@ -90,3 +90,8 @@ In order of achievability:
 - [X] AppKit and TVKit support
     - The `Router` accepts a generic presenter type. Even command line presentation is as easy as changing out presenters.
 - [ ] Automatic URL scheme support
+
+
+- Ideal API?
+	- StackRouter(:) / Router(stack:)
+
