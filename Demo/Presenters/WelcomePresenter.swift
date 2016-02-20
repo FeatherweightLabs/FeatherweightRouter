@@ -13,5 +13,5 @@ func welcomePresenter(store: AppStore) -> UIRouterDelegate {
 
     let viewController = WelcomeViewController(WelcomeViewModel(store: store))
 
-    return RouterDelegate() { viewController }
+    return RouterDelegate(getPresenter: { viewController})
 }

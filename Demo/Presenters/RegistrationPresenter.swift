@@ -18,5 +18,5 @@ func registrationPresenter(store: AppStore) -> UIRouterDelegate {
         callToActionTitle: "Go to '/about/'",
         callToActionRoute: "about"))
 
-    return RouterDelegate() { viewController }
+    return RouterDelegate(getPresenter: { viewController})
 }

@@ -18,5 +18,5 @@ func step2Presenter(store: AppStore) -> UIRouterDelegate {
         callToActionTitle: "Go to '/welcome/register/'",
         callToActionRoute: "welcome/register"))
 
-    return RouterDelegate() { viewController }
+    return RouterDelegate(getPresenter: { viewController})
 }
