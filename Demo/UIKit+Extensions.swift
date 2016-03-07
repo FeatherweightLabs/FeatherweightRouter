@@ -1,11 +1,3 @@
-//
-//  UIKit+Extensions.swift
-//  FeatherweightRouter
-//
-//  Created by Karl Bowden on 1/02/2016.
-//  Copyright © 2016 Featherweight Labs. All rights reserved.
-//
-
 import UIKit
 
 // Source: https://www.mikeash.com/pyblog/friday-qa-2015-12-25-swifty-targetaction.html

@@ -1,11 +1,3 @@
-//
-//  WelcomeViewModel.swift
-//  FeatherweightRouter
-//
-//  Created by Karl Bowden on 7/01/2016.
-//  Copyright © 2016 Featherweight Labs. All rights reserved.
-//
-
 protocol ProvidesRouteDispatch {
     func dispatchRoute(_: String)
 }

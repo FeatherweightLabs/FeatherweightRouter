@@ -1,11 +1,3 @@
-//
-//  RouterDelegate.swift
-//  FeatherweightRouter
-//
-//  Created by Karl Bowden on 28/01/2016.
-//  Copyright © 2016 Featherweight Labs. All rights reserved.
-//
-
 /**
 
  To control the display or change of route, each router needs a delegate to hand off to. The

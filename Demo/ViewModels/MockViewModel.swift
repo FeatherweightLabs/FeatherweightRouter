@@ -1,11 +1,3 @@
-//
-//  MockViewModel.swift
-//  FeatherweightRouter
-//
-//  Created by Karl Bowden on 9/02/2016.
-//  Copyright © 2016 Featherweight Labs. All rights reserved.
-//
-
 struct MockViewModel: ProvidesMockData {
 
     typealias RGBColor = (Int, Int, Int)

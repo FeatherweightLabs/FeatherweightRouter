@@ -1,11 +1,3 @@
-//
-//  Router.swift
-//  FeatherweightRouter
-//
-//  Created by Karl Bowden on 26/01/2016.
-//  Copyright © 2016 Featherweight Labs. All rights reserved.
-//
-
 /**
 
  The Router is a structure that collects functions together that are related to the same routing

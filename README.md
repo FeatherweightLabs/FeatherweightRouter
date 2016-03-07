@@ -95,3 +95,9 @@ In order of achievability:
 - Ideal API?
 	- StackRouter(:) / Router(stack:)
 
+# License
+
+All content is licensed under the Apache-2.0 unless otherwise stated.
+
+Copyright is owned by Karl Bowden and Featherweight Labs unless otherwise stated.
+

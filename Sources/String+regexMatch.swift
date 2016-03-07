@@ -1,11 +1,3 @@
-//
-//  String+regexMatch.swift
-//  FeatherweightRouter
-//
-//  Created by Karl Bowden on 28/01/2016.
-//  Copyright © 2016 Featherweight Labs. All rights reserved.
-//
-
 import Foundation
 
 extension String {
