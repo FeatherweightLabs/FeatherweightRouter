@@ -41,7 +41,5 @@ class MockViewController: UIViewController {
         actionButton.addAction(.TouchUpInside) { [unowned self] _ in
             self.viewModel.navigateToAction()
         }
-
     }
-
 }

@@ -16,5 +16,4 @@ extension String {
         let range = NSRange(location: 0, length: (string as NSString).length)
         return regex.matchesInString(string, options: [], range: range).count != 0
     }
-
 }

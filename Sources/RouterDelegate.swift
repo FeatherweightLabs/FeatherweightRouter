@@ -44,8 +44,6 @@ public struct RouterDelegate<T> {
      - parameter getPresenter: Returns the owned presenter
      - parameter setChild:     Callback action to set the child presenter
      - parameter setChildren:  Callback to set the children presenters
-
-     - returns: RouterDelegate<T>
      */
     public init(getPresenter: Void -> T, setChild: (T -> Void)? = nil,
         setChildren: ([T] -> Void)? = nil) {

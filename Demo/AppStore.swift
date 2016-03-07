@@ -9,5 +9,4 @@ class AppStore: ProvidesRouteDispatch {
     func dispatchRoute(string: String) {
         setPath(string)
     }
-
 }

@@ -10,5 +10,5 @@ func aboutPresenter(store: AppStore) -> UIRouterDelegate {
         callToActionTitle: "Go to '/welcome/login/'",
         callToActionRoute: "welcome/login"))
 
-    return RouterDelegate(getPresenter: { viewController})
+    return RouterDelegate(getPresenter: { viewController })
 }

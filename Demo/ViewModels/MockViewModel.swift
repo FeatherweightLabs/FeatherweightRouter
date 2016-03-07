@@ -10,12 +10,12 @@ struct MockViewModel: ProvidesMockData {
     init(store: AppStore, backgroundColor: RGBColor, title: String, callToActionTitle: String,
         callToActionRoute: String) {
 
-        self.backgroundColor = backgroundColor
-        self.title = title
-        self.callToActionTitle = callToActionTitle
+            self.backgroundColor = backgroundColor
+            self.title = title
+            self.callToActionTitle = callToActionTitle
 
-        navigateToAction = {
-            store.dispatchRoute(callToActionRoute)
-        }
+            navigateToAction = {
+                store.dispatchRoute(callToActionRoute)
+            }
     }
 }

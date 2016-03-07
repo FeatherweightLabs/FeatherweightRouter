@@ -30,5 +30,4 @@ class RouterTests: XCTestCase {
     func testCreation() {
         XCTAssertEqual(testRouter.presenter.name, testName)
     }
-
 }

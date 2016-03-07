@@ -23,9 +23,9 @@ extension Router {
 
         router.setRoute = { path in
             // inform the junction delegate of the available children
-            router.delegate.set(junctions.map { $0.presenter})
+            router.delegate.set(junctions.map { $0.presenter })
 
-            if let junction = junctions.pickFirst({ $0.handlesRoute(path) ? $0 : nil}) {
+            if let junction = junctions.pickFirst({ $0.handlesRoute(path) ? $0 : nil }) {
                 // if a child matches, pass the path to it
                 junction.setRoute(path)
                 // and set it as the active junction

@@ -17,7 +17,7 @@ class ActionTrampoline<T>: NSObject {
 
 let uiControlAssociatedFunctionObject = UnsafeMutablePointer<Int8>.alloc(1)
 
-protocol UIControlActionFunctionProtocol {}
+protocol UIControlActionFunctionProtocol { }
 
 extension UIControlActionFunctionProtocol where Self: UIControl {
 
@@ -25,8 +25,8 @@ extension UIControlActionFunctionProtocol where Self: UIControl {
         let trampoline = ActionTrampoline(action: action)
         self.addTarget(trampoline, action: "action:", forControlEvents: events)
         objc_setAssociatedObject(self, uiControlAssociatedFunctionObject,
-                                       trampoline, .OBJC_ASSOCIATION_RETAIN)
+            trampoline, .OBJC_ASSOCIATION_RETAIN)
     }
 }
 
-extension UIControl: UIControlActionFunctionProtocol {}
+extension UIControl: UIControlActionFunctionProtocol { }

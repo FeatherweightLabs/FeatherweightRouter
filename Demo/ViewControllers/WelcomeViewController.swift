@@ -43,5 +43,4 @@ class WelcomeViewController: UIViewController {
             blue: CGFloat(viewModel.backgroundColor.2) / 255,
             alpha: 1)
     }
-
 }
