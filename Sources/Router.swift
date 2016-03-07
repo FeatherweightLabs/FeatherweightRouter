@@ -3,7 +3,7 @@
  The Router is a structure that collects functions together that are related to the same routing
  unit.
 
- Each Router also requires a RouterDelegate, through which any required changes are passed to.
+ Each Router also requires a Presenter, through which any required changes are passed to.
 
  The generic type <T> - most likely a ViewController - is the item to be presented if this route
  is evaluated and determined to be a match to the current route.
@@ -18,14 +18,14 @@
 public struct Router<T> {
 
     /**
-     Delegate to pass route actions too
+     Presenter to pass route actions too
      */
-    public var delegate: RouterDelegate<T>
+    public var presenter: Presenter<T>
 
     /**
      The presenter to return if this route matches
      */
-    public var presenter: T { return delegate.presenter }
+    public var presentable: T { return presenter.presentable }
 
     /**
      Determines if this Router handles the passed in String
@@ -33,7 +33,7 @@ public struct Router<T> {
     public var handlesRoute: String -> Bool = { _ in false }
 
     /**
-     Passes actions to the RouterDelegate to update the view to the provided String
+     Passes actions to the Presenter to update the view to the provided String
      */
     public var setRoute: String -> Void = { _ in }
 
@@ -50,18 +50,18 @@ public struct Router<T> {
 
      Sets each of router variables to the passed in closures.
 
-     - parameter delegate:     RouterDelegate<T>
+     - parameter presenter:    Presenter<T>
      - parameter handlesRoute: (route: String) -> Bool
      - parameter setRoute:     (route: String) -> Void
      - parameter getStack:     (route: String) -> [T]?
      */
     public init(
-        _ delegate: RouterDelegate<T>,
+        _ presenter: Presenter<T>,
         handlesRoute: (String -> Bool)? = nil,
         setRoute: (String -> Void)? = nil,
         getStack: (String -> [T]?)? = nil) {
 
-            self.delegate = delegate
+            self.presenter = presenter
 
             if let handlesRoute = handlesRoute {
                 self.handlesRoute = handlesRoute

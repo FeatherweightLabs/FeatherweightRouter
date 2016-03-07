@@ -8,19 +8,19 @@ class RouterTests: XCTestCase {
     }
 
     typealias TestRouter = Router<DummyPresenter>
-    typealias TestRouterDelegate = RouterDelegate<DummyPresenter>
+    typealias TestPresenter = Presenter<DummyPresenter>
 
     var testName: String!
-    var dummyPresenter: DummyPresenter!
-    var dummyDelegate: TestRouterDelegate!
+    var dummyPresentable: DummyPresenter!
+    var dummyPresenter: TestPresenter!
     var testRouter: TestRouter!
 
     override func setUp() {
         super.setUp()
         testName = String(arc4random_uniform(100))
-        dummyPresenter = DummyPresenter(name: testName)
-        dummyDelegate = RouterDelegate(getPresenter: { self.dummyPresenter })
-        testRouter = Router(delegate: dummyDelegate)
+        dummyPresentable = DummyPresenter(name: testName)
+        dummyPresenter = Presenter(getPresentable: { self.dummyPresentable })
+        testRouter = Router(dummyPresenter)
     }
 
     override func tearDown() {
@@ -28,6 +28,6 @@ class RouterTests: XCTestCase {
     }
 
     func testCreation() {
-        XCTAssertEqual(testRouter.presenter.name, testName)
+        XCTAssertEqual(testRouter.presentable.name, testName)
     }
 }

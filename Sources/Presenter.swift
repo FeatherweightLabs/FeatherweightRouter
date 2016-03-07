@@ -1,15 +1,15 @@
 /**
 
- To control the display or change of route, each router needs a delegate to hand off to. The
- delegate separates the route tree from interface code.
+ To control the display or change of route, each router needs a presenter to hand off to. The
+ presenter separates the route tree from interface code.
 
- The actual presenter is owned by the delegate which can control the lifecycle of ViewControllers.
+ The actual presenter is owned by the presenter which can control the lifecycle of ViewControllers.
 
  */
-public struct RouterDelegate<T> {
+public struct Presenter<T> {
 
     /// Returns the child presenter
-    public var getPresenter: Void -> T
+    public var getPresentable: Void -> T
 
     /// Sets the child value to the passed in presenter
     public var setChild: T -> Void = { _ in fatalError("Call to unset setChild") }
@@ -18,7 +18,7 @@ public struct RouterDelegate<T> {
     public var setChildren: [T] -> Void = { _ in fatalError("Call to unset setChildren") }
 
     /// The owned presenter
-    public var presenter: T { return getPresenter() }
+    public var presentable: T { return getPresentable() }
 
     /**
      Shorthand for the setChild function
@@ -39,15 +39,15 @@ public struct RouterDelegate<T> {
     }
 
     /**
-     DelegatePresenter initialiser
+     Presenter initialiser
 
-     - parameter getPresenter: Returns the owned presenter
-     - parameter setChild:     Callback action to set the child presenter
-     - parameter setChildren:  Callback to set the children presenters
+     - parameter getPresentable: Returns the owned presenter
+     - parameter setChild:       Callback action to set the child presenter
+     - parameter setChildren:    Callback to set the children presenters
      */
-    public init(getPresenter: Void -> T, setChild: (T -> Void)? = nil,
+    public init(getPresentable: Void -> T, setChild: (T -> Void)? = nil,
         setChildren: ([T] -> Void)? = nil) {
-            self.getPresenter = getPresenter
+            self.getPresentable = getPresentable
             if let setChild = setChild {
                 self.setChild = setChild
             }

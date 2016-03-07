@@ -22,7 +22,7 @@ extension Router {
         }
 
         router.setRoute = { path in
-            router.delegate.set(stack.pickFirst { $0.getStack(path) } ?? [])
+            router.presenter.set(stack.pickFirst { $0.getStack(path) } ?? [])
         }
 
         return router

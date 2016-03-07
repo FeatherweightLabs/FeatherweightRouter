@@ -1,7 +1,7 @@
 import UIKit
 import FeatherweightRouter
 
-func loginPresenter(store: AppStore) -> UIRouterDelegate {
+func loginPresenter(store: AppStore) -> UIPresenter {
 
     let viewController = MockViewController(MockViewModel(
         store: store,
@@ -10,5 +10,5 @@ func loginPresenter(store: AppStore) -> UIRouterDelegate {
         callToActionTitle: "Go to '/welcome/'",
         callToActionRoute: "welcome"))
 
-    return RouterDelegate(getPresenter: { viewController })
+    return Presenter(getPresentable: { viewController })
 }

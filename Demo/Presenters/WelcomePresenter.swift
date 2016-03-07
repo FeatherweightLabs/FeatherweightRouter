@@ -1,9 +1,9 @@
 import UIKit
 import FeatherweightRouter
 
-func welcomePresenter(store: AppStore) -> UIRouterDelegate {
+func welcomePresenter(store: AppStore) -> UIPresenter {
 
     let viewController = WelcomeViewController(WelcomeViewModel(store: store))
 
-    return RouterDelegate(getPresenter: { viewController })
+    return Presenter(getPresentable: { viewController })
 }

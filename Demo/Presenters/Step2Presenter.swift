@@ -1,7 +1,7 @@
 import UIKit
 import FeatherweightRouter
 
-func step2Presenter(store: AppStore) -> UIRouterDelegate {
+func step2Presenter(store: AppStore) -> UIPresenter {
 
     let viewController = MockViewController(MockViewModel(
         store: store,
@@ -10,5 +10,5 @@ func step2Presenter(store: AppStore) -> UIRouterDelegate {
         callToActionTitle: "Go to '/welcome/register/'",
         callToActionRoute: "welcome/register"))
 
-    return RouterDelegate(getPresenter: { viewController })
+    return Presenter(getPresentable: { viewController })
 }

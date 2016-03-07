@@ -27,11 +27,11 @@ extension Router {
 
         router.getStack = { path in
             if match(path) {
-                return [router.delegate.presenter]
+                return [router.presenter.presentable]
             }
             for child in children {
                 if let stack = child.getStack(path) {
-                    return [router.delegate.presenter] + stack
+                    return [router.presenter.presentable] + stack
                 }
             }
             return nil

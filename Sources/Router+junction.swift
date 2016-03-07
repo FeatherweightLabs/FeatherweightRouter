@@ -22,14 +22,14 @@ extension Router {
         }
 
         router.setRoute = { path in
-            // inform the junction delegate of the available children
-            router.delegate.set(junctions.map { $0.presenter })
+            // inform the junction presenter of the available children
+            router.presenter.set(junctions.map { $0.presentable })
 
             if let junction = junctions.pickFirst({ $0.handlesRoute(path) ? $0 : nil }) {
                 // if a child matches, pass the path to it
                 junction.setRoute(path)
                 // and set it as the active junction
-                router.delegate.set(junction.presenter)
+                router.presenter.set(junction.presentable)
             }
         }
 

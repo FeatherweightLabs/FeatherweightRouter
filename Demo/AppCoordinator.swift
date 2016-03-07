@@ -1,7 +1,7 @@
 import UIKit
 import FeatherweightRouter
 
-typealias UIRouterDelegate = RouterDelegate<UIViewController>
+typealias UIPresenter = Presenter<UIViewController>
 
 func appCoordinator() -> UIViewController {
 
@@ -11,7 +11,7 @@ func appCoordinator() -> UIViewController {
 
     store.setPath("welcome")
 
-    return router.presenter
+    return router.presentable
 }
 
 func createRouter(store: AppStore) -> Router<UIViewController> {
