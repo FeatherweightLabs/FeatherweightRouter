@@ -11,4 +11,9 @@ class ArrayPickFirstTests: XCTestCase {
 
         XCTAssertEqual(expected, actual)
     }
+
+    func testPicksNil() {
+        XCTAssertNil([Int]().pickFirst { $0 })
+        XCTAssertNil([0].pickFirst { $0 == 0 ? nil : nil })
+    }
 }

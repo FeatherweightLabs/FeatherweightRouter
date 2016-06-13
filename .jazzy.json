@@ -1,0 +1,8 @@
+{
+    "xcodebuild_arguments": ["-project", "FeatherweightRouter.xcodeproj", "-scheme", "FeatherweightRouter-macOS"],
+    "swift_version": "2.2",
+    "author_name": "FeatherweightLabs",
+    "author_url": "https://github.com/FeatherweightLabs/FeatherweightRouter",
+    "module_name": "FeatherweightRouter",
+    "docset_platform": "FeatherweightRouter"
+}

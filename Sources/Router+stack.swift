@@ -13,7 +13,7 @@ extension Router {
 
      - returns: A customised copy of Router<T>
      */
-    public func stack(stack: [Router<T>]) -> Router<T> {
+    public func stack(stack: [Router<ViewController, Path>]) -> Router<ViewController, Path> {
 
         var router = self
 
@@ -23,6 +23,7 @@ extension Router {
 
         router.setRoute = { path in
             router.presenter.set(stack.pickFirst { $0.getStack(path) } ?? [])
+            return true
         }
 
         return router

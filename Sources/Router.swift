@@ -15,27 +15,27 @@
  Ie, hostname and protocol stripped, and string down-cased if required.
 
  */
-public struct Router<T> {
+public struct Router<ViewController, Path> {
 
     /**
      Presenter to pass route actions too
      */
-    public var presenter: Presenter<T>
+    public var presenter: Presenter<ViewController>
 
     /**
      The presenter to return if this route matches
      */
-    public var presentable: T { return presenter.presentable }
+    public var presentable: ViewController { return presenter.presentable }
 
     /**
      Determines if this Router handles the passed in String
      */
-    public var handlesRoute: String -> Bool = { _ in false }
+    public var handlesRoute: Path -> Bool = { _ in false }
 
     /**
      Passes actions to the Presenter to update the view to the provided String
      */
-    public var setRoute: String -> Void = { _ in }
+    public var setRoute: Path -> Bool = { _ in false }
 
     /**
      Returns an array presenters (T) that match the passed in String. The actual array returned can
@@ -43,7 +43,7 @@ public struct Router<T> {
      array of all immediate ancestors, weather they match or now, whereas a Stack Router traverses
      nested children to find a match and returns the matched ancestor tree.
      */
-    public var getStack: String -> [T]? = { _ in nil }
+    public var getStack: Path -> [ViewController]? = { _ in nil }
 
     /**
      Primary Router initialiser
@@ -56,23 +56,23 @@ public struct Router<T> {
      - parameter getStack:     (route: String) -> [T]?
      */
     public init(
-        _ presenter: Presenter<T>,
-        handlesRoute: (String -> Bool)? = nil,
-        setRoute: (String -> Void)? = nil,
-        getStack: (String -> [T]?)? = nil) {
+        _ presenter: Presenter<ViewController>,
+          handlesRoute: (Path -> Bool)? = nil,
+          setRoute: (Path -> Bool)? = nil,
+          getStack: (Path -> [ViewController]?)? = nil) {
 
-            self.presenter = presenter
+        self.presenter = presenter
 
-            if let handlesRoute = handlesRoute {
-                self.handlesRoute = handlesRoute
-            }
+        if let handlesRoute = handlesRoute {
+            self.handlesRoute = handlesRoute
+        }
 
-            if let setRoute = setRoute {
-                self.setRoute = setRoute
-            }
+        if let setRoute = setRoute {
+            self.setRoute = setRoute
+        }
 
-            if let getStack = getStack {
-                self.getStack = getStack
-            }
+        if let getStack = getStack {
+            self.getStack = getStack
+        }
     }
 }

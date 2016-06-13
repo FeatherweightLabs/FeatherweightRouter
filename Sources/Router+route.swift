@@ -7,36 +7,33 @@ extension Router {
      town, there may be multiple routes with varying junctions and paths to take, but the
      destination will remain the same.
 
-     - parameter pattern: A String containing a regex that possibly matches to provided paths.
+     - parameter predicate: A String containing a regex that possibly matches to provided paths.
      - parameter children: Array of little Router children.
 
      - returns: A customised copy of Router<T>
      */
-    public func route(pattern: String, children: [Router<T>] = []) -> Router<T> {
+    public func route(predicate
+        pathMatches: (Path -> Bool), children: [Router<ViewController, Path>] = []) ->
+        Router<ViewController, Path> {
 
-        var router = self
-        let matchPattern = "^\(pattern)$"
+            var router = self
 
-        func match(string: String) -> Bool {
-            return matchPattern.regexMatch(string)
-        }
-
-        router.handlesRoute = { path in
-            return match(path) || children.contains { $0.handlesRoute(path) } ?? false
-        }
-
-        router.getStack = { path in
-            if match(path) {
-                return [router.presenter.presentable]
+            router.handlesRoute = { path in
+                return pathMatches(path) || children.contains { $0.handlesRoute(path) } ?? false
             }
-            for child in children {
-                if let stack = child.getStack(path) {
-                    return [router.presenter.presentable] + stack
+
+            router.getStack = { path in
+                if pathMatches(path) {
+                    return [router.presenter.presentable]
                 }
+                for child in children {
+                    if let stack = child.getStack(path) {
+                        return [router.presenter.presentable] + stack
+                    }
+                }
+                return nil
             }
-            return nil
-        }
 
-        return router
+            return router
     }
 }

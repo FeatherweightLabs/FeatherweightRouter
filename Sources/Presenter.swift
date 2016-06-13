@@ -5,27 +5,32 @@
 
  The actual presenter is owned by the presenter which can control the lifecycle of ViewControllers.
 
+ It is a structure that bridges commands between the Router and View. As such about the only thing
+ we need to test is that the commands are forwarded correctly.
+
  */
-public struct Presenter<T> {
+public struct Presenter<ViewController> {
 
     /// Returns the child presenter
-    public var getPresentable: Void -> T
+    public var getPresentable: () -> ViewController
 
     /// Sets the child value to the passed in presenter
-    public var setChild: T -> Void = { _ in fatalError("Call to unset setChild") }
+    public var setChild: ViewController -> Void = { _ in
+        fatalError("Call to unset setChild") }
 
     /// Sets the children value to passed in presenters
-    public var setChildren: [T] -> Void = { _ in fatalError("Call to unset setChildren") }
+    public var setChildren: [ViewController] -> Void = { _ in
+        fatalError("Call to unset setChildren") }
 
     /// The owned presenter
-    public var presentable: T { return getPresentable() }
+    public var presentable: ViewController { return getPresentable() }
 
     /**
      Shorthand for the setChild function
 
      - parameter child: child presenter
      */
-    public func set(child: T) {
+    public func set(child: ViewController) {
         setChild(child)
     }
 
@@ -34,7 +39,7 @@ public struct Presenter<T> {
 
      - parameter children: presenter children
      */
-    public func set(children: [T]) {
+    public func set(children: [ViewController]) {
         setChildren(children)
     }
 
@@ -45,14 +50,14 @@ public struct Presenter<T> {
      - parameter setChild:       Callback action to set the child presenter
      - parameter setChildren:    Callback to set the children presenters
      */
-    public init(getPresentable: Void -> T, setChild: (T -> Void)? = nil,
-        setChildren: ([T] -> Void)? = nil) {
-            self.getPresentable = getPresentable
-            if let setChild = setChild {
-                self.setChild = setChild
-            }
-            if let setChildren = setChildren {
-                self.setChildren = setChildren
-            }
+    public init(getPresentable: Void -> ViewController, setChild: (ViewController -> Void)? = nil,
+                setChildren: ([ViewController] -> Void)? = nil) {
+        self.getPresentable = getPresentable
+        if let setChild = setChild {
+            self.setChild = setChild
+        }
+        if let setChildren = setChildren {
+            self.setChildren = setChildren
+        }
     }
 }

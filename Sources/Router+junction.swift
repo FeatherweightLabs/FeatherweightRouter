@@ -13,26 +13,29 @@ extension Router {
 
      - returns: Router<T>, a customised copy of self
      */
-    public func junction(junctions: [Router<T>]) -> Router<T> {
+    public func junction(junctions: [Router<ViewController, Path>])
+        -> Router<ViewController, Path> {
 
-        var router = self
+            var router = self
 
-        router.handlesRoute = { path in
-            return junctions.contains { $0.handlesRoute(path) }
-        }
-
-        router.setRoute = { path in
-            // inform the junction presenter of the available children
-            router.presenter.set(junctions.map { $0.presentable })
-
-            if let junction = junctions.pickFirst({ $0.handlesRoute(path) ? $0 : nil }) {
-                // if a child matches, pass the path to it
-                junction.setRoute(path)
-                // and set it as the active junction
-                router.presenter.set(junction.presentable)
+            router.handlesRoute = { path in
+                return junctions.contains { $0.handlesRoute(path) }
             }
-        }
 
-        return router
+            router.setRoute = { path in
+                // inform the junction presenter of the available children
+                router.presenter.set(junctions.map { $0.presentable })
+
+                if let junction = junctions.pickFirst({ $0.handlesRoute(path) ? $0 : nil }) {
+                    // if a child matches, pass the path to it
+                    junction.setRoute(path)
+                    // and set it as the active junction
+                    router.presenter.set(junction.presentable)
+                    return true
+                }
+                return false
+            }
+
+            return router
     }
 }
