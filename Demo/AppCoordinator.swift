@@ -5,7 +5,7 @@ typealias UIPresenter = Presenter<UIViewController>
 
 func appCoordinator() -> UIViewController {
 
-    var router: Router<UIViewController>!
+    var router: Router<UIViewController, String>!
     let store = AppStore() { router.setRoute($0) }
     router = createRouter(store)
 
@@ -14,19 +14,19 @@ func appCoordinator() -> UIViewController {
     return router.presentable
 }
 
-func createRouter(store: AppStore) -> Router<UIViewController> {
+func createRouter(store: AppStore) -> Router<UIViewController, String> {
 
     return Router(tabBarPresenter()).junction([
 
         Router(navigationPresenter("Welcome")).stack([
-            Router(welcomePresenter(store)).route("welcome", children: [
-                Router(registrationPresenter(store)).route("welcome/register", children: [
-                    Router(step2Presenter(store)).route("welcome/register/step2"),
+            Router(welcomePresenter(store)).route(predicate: {$0 == "welcome"}, children: [
+                Router(registrationPresenter(store)).route(predicate: {$0 == "welcome/register"}, children: [
+                    Router(step2Presenter(store)).route(predicate: {$0 == "welcome/register/step2"}),
                 ]),
-                Router(loginPresenter(store)).route("welcome/login"),
+                Router(loginPresenter(store)).route(predicate: {$0 == "welcome/login"}),
             ])
         ]),
 
-        Router(aboutPresenter(store)).route("about"),
+        Router(aboutPresenter(store)).route(predicate: {$0 == "about"}),
     ])
 }
