@@ -30,12 +30,12 @@ public struct Router<ViewController, Path> {
     /**
      Determines if this Router handles the passed in String
      */
-    public var handlesRoute: Path -> Bool = { _ in false }
+    public var handlesRoute: (Path) -> Bool = { _ in false }
 
     /**
      Passes actions to the Presenter to update the view to the provided String
      */
-    public var setRoute: Path -> Bool = { _ in false }
+    public var setRoute: (Path) -> Bool = { _ in false }
 
     /**
      Returns an array presenters (T) that match the passed in String. The actual array returned can
@@ -43,7 +43,7 @@ public struct Router<ViewController, Path> {
      array of all immediate ancestors, weather they match or now, whereas a Stack Router traverses
      nested children to find a match and returns the matched ancestor tree.
      */
-    public var getStack: Path -> [ViewController]? = { _ in nil }
+    public var getStack: (Path) -> [ViewController]? = { _ in nil }
 
     /**
      Primary Router initialiser
@@ -57,9 +57,9 @@ public struct Router<ViewController, Path> {
      */
     public init(
         _ presenter: Presenter<ViewController>,
-          handlesRoute: (Path -> Bool)? = nil,
-          setRoute: (Path -> Bool)? = nil,
-          getStack: (Path -> [ViewController]?)? = nil) {
+          handlesRoute: ((Path) -> Bool)? = nil,
+          setRoute: ((Path) -> Bool)? = nil,
+          getStack: ((Path) -> [ViewController]?)? = nil) {
 
         self.presenter = presenter
 

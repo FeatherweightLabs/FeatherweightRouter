@@ -7,7 +7,7 @@ extension Array {
 
      - returns: The first non-nil value returned by the predicate, else nil
      */
-    func pickFirst<T>(predicate: Element -> T?) -> T? {
+    func pickFirst<T>(_ predicate: (Element) -> T?) -> T? {
         for item in self {
             if let result = predicate(item) {
                 return result

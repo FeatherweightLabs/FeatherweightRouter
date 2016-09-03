@@ -13,7 +13,7 @@ extension Router {
      - returns: A customised copy of Router<T>
      */
     public func route(predicate
-        pathMatches: (Path -> Bool), children: [Router<ViewController, Path>] = []) ->
+        pathMatches: ((Path) -> Bool), children: [Router<ViewController, Path>] = []) ->
         Router<ViewController, Path> {
 
             var router = self

@@ -13,7 +13,7 @@ extension Router {
 
      - returns: A customised copy of Router<T>
      */
-    public func stack(stack: [Router<ViewController, Path>]) -> Router<ViewController, Path> {
+    public func stack(_ stack: [Router<ViewController, Path>]) -> Router<ViewController, Path> {
 
         var router = self
 

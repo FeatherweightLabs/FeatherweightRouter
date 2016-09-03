@@ -15,11 +15,11 @@ public struct Presenter<ViewController> {
     public var getPresentable: () -> ViewController
 
     /// Sets the child value to the passed in presenter
-    public var setChild: ViewController -> Void = { _ in
+    public var setChild: (ViewController) -> Void = { _ in
         fatalError("Call to unset setChild") }
 
     /// Sets the children value to passed in presenters
-    public var setChildren: [ViewController] -> Void = { _ in
+    public var setChildren: ([ViewController]) -> Void = { _ in
         fatalError("Call to unset setChildren") }
 
     /// The owned presenter
@@ -30,7 +30,7 @@ public struct Presenter<ViewController> {
 
      - parameter child: child presenter
      */
-    public func set(child: ViewController) {
+    public func set(_ child: ViewController) {
         setChild(child)
     }
 
@@ -39,7 +39,7 @@ public struct Presenter<ViewController> {
 
      - parameter children: presenter children
      */
-    public func set(children: [ViewController]) {
+    public func set(_ children: [ViewController]) {
         setChildren(children)
     }
 
@@ -50,8 +50,8 @@ public struct Presenter<ViewController> {
      - parameter setChild:       Callback action to set the child presenter
      - parameter setChildren:    Callback to set the children presenters
      */
-    public init(getPresentable: Void -> ViewController, setChild: (ViewController -> Void)? = nil,
-                setChildren: ([ViewController] -> Void)? = nil) {
+    public init(getPresentable: @escaping (Void) -> ViewController, setChild: ((ViewController) -> Void)? = nil,
+                setChildren: (([ViewController]) -> Void)? = nil) {
         self.getPresentable = getPresentable
         if let setChild = setChild {
             self.setChild = setChild

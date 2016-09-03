@@ -13,7 +13,7 @@ extension Router {
 
      - returns: Router<T>, a customised copy of self
      */
-    public func junction(junctions: [Router<ViewController, Path>])
+    public func junction(_ junctions: [Router<ViewController, Path>])
         -> Router<ViewController, Path> {
 
             var router = self
