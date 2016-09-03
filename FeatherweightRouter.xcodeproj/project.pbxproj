@@ -436,9 +436,12 @@
 				TargetAttributes = {
 					7349E73E1C3DD665004A507B = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					7349E7771C3DD798004A507B = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 74D9UBS5CF;
+						LastSwiftMigration = 0800;
 					};
 					7349E7981C3DD963004A507B = {
 						CreatedOnToolsVersion = 7.2;
@@ -789,6 +792,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -796,6 +800,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -803,11 +808,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 74D9UBS5CF;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouterTests;
 				PRODUCT_NAME = FeatherweightRouterTests;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -815,10 +822,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 74D9UBS5CF;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.featherweightlabs.FeatherweightRouterTests;
 				PRODUCT_NAME = FeatherweightRouterTests;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
