@@ -448,9 +448,11 @@
 					};
 					737DF5A61D0D6EB200614CC0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					737DF5AF1D0D6EB200614CC0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -859,6 +861,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -866,6 +869,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -881,6 +885,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.featherweightlabs.FeatherweightRouter-macOSTests";
 				PRODUCT_NAME = "FeatherweightRouterTests-macOS";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -896,6 +901,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.featherweightlabs.FeatherweightRouter-macOSTests";
 				PRODUCT_NAME = "FeatherweightRouterTests-macOS";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
