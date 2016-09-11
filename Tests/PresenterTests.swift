@@ -4,9 +4,9 @@ import XCTest
 class PresenterTests: XCTestCase {
 
     enum MockViewController {
-        case Parent
-        case Child
-        case Other
+        case parent
+        case child
+        case other
     }
 
     func testGetPresentable() {

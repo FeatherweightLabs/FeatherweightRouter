@@ -4,7 +4,7 @@ import XCTest
 class RouterJunctionTests: XCTestCase {
 
     enum Presentable {
-        case None, Router, Junction1, Junction2, NestedChild
+        case none, router, junction1, junction2, nestedChild
     }
 
     typealias TestRouter = Router<Presentable, Presentable>
@@ -12,67 +12,67 @@ class RouterJunctionTests: XCTestCase {
     var router: TestRouter!
     var junction1: TestRouter!
     var junction2: TestRouter!
-    var child = Presentable.None
+    var child = Presentable.none
     var children = [Presentable]()
 
     override func setUp() {
         super.setUp()
-        let nestedChild = TestRouter(Presenter(getPresentable: { .NestedChild }))
-            .route(predicate: { $0 == .NestedChild })
-        junction1 = TestRouter(Presenter(getPresentable: { .Junction1 }))
-            .route(predicate: { $0 == .Junction1 }, children: [nestedChild])
-        junction2 = TestRouter(Presenter(getPresentable: { .Junction2 }))
-            .route(predicate: { $0 == .Junction2 })
+        let nestedChild = TestRouter(Presenter(getPresentable: { .nestedChild }))
+            .route(predicate: { $0 == .nestedChild })
+        junction1 = TestRouter(Presenter(getPresentable: { .junction1 }))
+            .route(predicate: { $0 == .junction1 }, children: [nestedChild])
+        junction2 = TestRouter(Presenter(getPresentable: { .junction2 }))
+            .route(predicate: { $0 == .junction2 })
 
-        child = Presentable.None
+        child = Presentable.none
         children = [Presentable]()
 
         router = TestRouter(Presenter(
-            getPresentable: { .Router },
+            getPresentable: { .router },
             setChild: { self.child = $0 },
             setChildren: { self.children = $0 }))
             .junction([junction1, junction2])
     }
 
     func testOnlyHandlesChildRoutes() {
-        XCTAssert(router.handlesRoute(.Junction1))
-        XCTAssert(router.handlesRoute(.Junction2))
-        XCTAssert(router.handlesRoute(.NestedChild))
-        XCTAssertFalse(router.handlesRoute(.Router))
-        XCTAssertFalse(router.handlesRoute(.None))
+        XCTAssert(router.handlesRoute(.junction1))
+        XCTAssert(router.handlesRoute(.junction2))
+        XCTAssert(router.handlesRoute(.nestedChild))
+        XCTAssertFalse(router.handlesRoute(.router))
+        XCTAssertFalse(router.handlesRoute(.none))
     }
 
     func testHandlesRouteDoesntCallPresenters() {
-        XCTAssert(router.handlesRoute(.NestedChild))
+        XCTAssert(router.handlesRoute(.nestedChild))
 
-        XCTAssert(router.presentable == .Router)
-        XCTAssert(child == .None)
+        XCTAssert(router.presentable == .router)
+        XCTAssert(child == .none)
         XCTAssert(children == [])
     }
 
     func testSetRoute() {
-        for path: Presentable in [.Junction1, .Junction2] {
+        for path: Presentable in [.junction1, .junction2] {
             XCTAssert(router.setRoute(path))
             XCTAssert(child == path)
-            XCTAssert(children == [.Junction1, .Junction2])
+            XCTAssert(children == [.junction1, .junction2])
         }
     }
 
     func testSetNestedRoute() {
-        XCTAssert(router.setRoute(.NestedChild))
-        XCTAssert(child == .Junction1)
-        XCTAssert(children == [.Junction1, .Junction2])
+        XCTAssert(router.setRoute(.nestedChild))
+        XCTAssert(child == .junction1)
+        XCTAssert(children == [.junction1, .junction2])
     }
 
     func testSetRouteWithUnhandledRoutes() {
-        XCTAssertFalse(router.setRoute(.Router))
-        XCTAssertFalse(router.setRoute(.None))
+        XCTAssertFalse(router.setRoute(.router))
+        XCTAssertFalse(router.setRoute(.none))
     }
 
     func testSetRouteAlwaysCallsSetChildren() {
-        XCTAssertFalse(router.setRoute(.Router))
-        XCTAssert(child == .None)
-        XCTAssert(children == [.Junction1, .Junction2])
+        XCTAssertFalse(router.setRoute(.router))
+        XCTAssert(child == .none)
+        XCTAssert(children == [.junction1, .junction2])
     }
 
 }

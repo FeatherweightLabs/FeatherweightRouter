@@ -4,69 +4,69 @@ import XCTest
 class RouterRouteTests: XCTestCase {
 
     enum Presentable {
-        case None, Invalid
-        case Presentable, Route, Child1, Child2, NestedChild
+        case none, invalid
+        case presentable, route, child1, child2, nestedChild
     }
 
     typealias TestRouter = Router<Presentable, Presentable>
 
     var route: TestRouter!
-    var child = Presentable.None
+    var child = Presentable.none
     var children = [Presentable]()
 
     override func setUp() {
         super.setUp()
 
-        child = Presentable.None
+        child = Presentable.none
         children = [Presentable]()
 
         route = TestRouter(Presenter(
-            getPresentable: { .Presentable },
+            getPresentable: { .presentable },
             setChild: { self.child = $0 },
             setChildren: { self.children = $0 }))
 
-            .route(predicate: { $0 == .Route }, children: [
+            .route(predicate: { $0 == .route }, children: [
 
-                TestRouter(Presenter(getPresentable: { .Child1 }))
-                    .route(predicate: { $0 == .Child1 }),
+                TestRouter(Presenter(getPresentable: { .child1 }))
+                    .route(predicate: { $0 == .child1 }),
 
-                TestRouter(Presenter(getPresentable: { .Child2 }))
-                    .route(predicate: { $0 == .Child2 }, children: [
+                TestRouter(Presenter(getPresentable: { .child2 }))
+                    .route(predicate: { $0 == .child2 }, children: [
 
-                        TestRouter(Presenter(getPresentable: { .NestedChild }))
-                            .route(predicate: { $0 == .NestedChild }),
+                        TestRouter(Presenter(getPresentable: { .nestedChild }))
+                            .route(predicate: { $0 == .nestedChild }),
                         ]),
                 ])
     }
 
     override func tearDown() {
         route = nil
-        child = .None
+        child = .none
         children = []
         super.tearDown()
     }
 
     func testHandlesRoutes() {
-        XCTAssertFalse(route.handlesRoute(.None))
-        XCTAssertFalse(route.handlesRoute(.Invalid))
-        XCTAssert(route.handlesRoute(.Route))
-        XCTAssert(route.handlesRoute(.Child1))
-        XCTAssert(route.handlesRoute(.Child2))
-        XCTAssert(route.handlesRoute(.NestedChild))
+        XCTAssertFalse(route.handlesRoute(.none))
+        XCTAssertFalse(route.handlesRoute(.invalid))
+        XCTAssert(route.handlesRoute(.route))
+        XCTAssert(route.handlesRoute(.child1))
+        XCTAssert(route.handlesRoute(.child2))
+        XCTAssert(route.handlesRoute(.nestedChild))
     }
 
     func testSetRouteDoesNothing() {
-        XCTAssertFalse(route.setRoute(.Invalid))
-        XCTAssertEqual(child, Presentable.None)
+        XCTAssertFalse(route.setRoute(.invalid))
+        XCTAssertEqual(child, Presentable.none)
         XCTAssertEqual(children, [Presentable]())
     }
 
     func testGetStack() {
         let testValues: [(Presentable, [Presentable])] = [
-            (.Route, [.Presentable]),
-            (.Child1, [.Presentable, .Child1]),
-            (.Child2, [.Presentable, .Child2]),
-            (.NestedChild, [.Presentable, .Child2, .NestedChild]),
+            (.route, [.presentable]),
+            (.child1, [.presentable, .child1]),
+            (.child2, [.presentable, .child2]),
+            (.nestedChild, [.presentable, .child2, .nestedChild]),
         ]
         for (path, stack) in testValues {
             XCTAssertEqual(route.getStack(path)!, stack)

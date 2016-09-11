@@ -4,61 +4,61 @@ import XCTest
 class RouterStackTests: XCTestCase {
 
     enum Presentable {
-        case None, Invalid
-        case Presentable, Route, Child1, Child2
+        case none, invalid
+        case presentable, route, child1, child2
     }
 
     typealias TestRouter = Router<Presentable, Presentable>
 
     var router: TestRouter!
-    var child = Presentable.None
+    var child = Presentable.none
     var children = [Presentable]()
 
     override func setUp() {
         super.setUp()
 
-        child = Presentable.None
+        child = Presentable.none
         children = [Presentable]()
 
         router = TestRouter(Presenter(
-            getPresentable: { .Presentable },
+            getPresentable: { .presentable },
             setChild: { self.child = $0 },
             setChildren: { self.children = $0 }))
             .stack([
-                TestRouter(Presenter(getPresentable: { .Child1 }))
-                    .route(predicate: { $0 == .Child1 }),
-                TestRouter(Presenter(getPresentable: { .Child2 }))
-                    .route(predicate: { $0 == .Child2 }),
+                TestRouter(Presenter(getPresentable: { .child1 }))
+                    .route(predicate: { $0 == .child1 }),
+                TestRouter(Presenter(getPresentable: { .child2 }))
+                    .route(predicate: { $0 == .child2 }),
                 ])
     }
 
     override func tearDown() {
         router = nil
-        child = .None
+        child = .none
         children = []
         super.tearDown()
     }
 
     func testHandlesRoute() {
-        XCTAssertFalse(router.handlesRoute(.Presentable))
-        XCTAssert(router.handlesRoute(.Child1))
-        XCTAssert(router.handlesRoute(.Child2))
+        XCTAssertFalse(router.handlesRoute(.presentable))
+        XCTAssert(router.handlesRoute(.child1))
+        XCTAssert(router.handlesRoute(.child2))
     }
 
     func testSetRouteInvalid() {
-        XCTAssert(router.setRoute(.Presentable))
-        XCTAssertEqual(child, Presentable.None)
+        XCTAssert(router.setRoute(.presentable))
+        XCTAssertEqual(child, Presentable.none)
         XCTAssertEqual(children, [Presentable]())
     }
 
     func testSetPresenterChildNeverCalled() {
-        XCTAssert(router.setRoute(.Child1))
-        XCTAssertEqual(child, Presentable.None)
-        XCTAssertEqual(children, [Presentable.Child1])
+        XCTAssert(router.setRoute(.child1))
+        XCTAssertEqual(child, Presentable.none)
+        XCTAssertEqual(children, [Presentable.child1])
     }
 
     func testSetRouteValid() {
-        XCTAssert(router.setRoute(.Child2))
-        XCTAssertEqual(children, [Presentable.Child2])
+        XCTAssert(router.setRoute(.child2))
+        XCTAssertEqual(children, [Presentable.child2])
     }
 }
