@@ -13,13 +13,13 @@ extension Router {
      - returns: A customised copy of Router<T>
      */
     public func route(predicate
-        pathMatches: ((Path) -> Bool), children: [Router<ViewController, Path>] = []) ->
+        pathMatches: @escaping ((Path) -> Bool), children: [Router<ViewController, Path>] = []) ->
         Router<ViewController, Path> {
 
             var router = self
 
             router.handlesRoute = { path in
-                return pathMatches(path) || children.contains { $0.handlesRoute(path) } ?? false
+                return pathMatches(path) || children.contains { $0.handlesRoute(path) }
             }
 
             router.getStack = { path in
