@@ -6,7 +6,7 @@ typealias UIPresenter = Presenter<UIViewController>
 func appCoordinator() -> UIViewController {
 
     var router: Router<UIViewController, String>!
-    let store = AppStore() { router.setRoute($0) }
+    let store = AppStore() { _ = router.setRoute($0) }
     router = createRouter(store)
 
     store.setPath("welcome")
@@ -14,7 +14,7 @@ func appCoordinator() -> UIViewController {
     return router.presentable
 }
 
-func createRouter(store: AppStore) -> Router<UIViewController, String> {
+func createRouter(_ store: AppStore) -> Router<UIViewController, String> {
 
     return Router(tabBarPresenter()).junction([
 

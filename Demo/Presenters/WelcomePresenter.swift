@@ -1,7 +1,7 @@
 import UIKit
 import FeatherweightRouter
 
-func welcomePresenter(store: AppStore) -> UIPresenter {
+func welcomePresenter(_ store: AppStore) -> UIPresenter {
 
     let viewController = WelcomeViewController(WelcomeViewModel(store: store))
 

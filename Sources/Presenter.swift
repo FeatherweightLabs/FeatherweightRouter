@@ -50,7 +50,8 @@ public struct Presenter<ViewController> {
      - parameter setChild:       Callback action to set the child presenter
      - parameter setChildren:    Callback to set the children presenters
      */
-    public init(getPresentable: @escaping (Void) -> ViewController, setChild: ((ViewController) -> Void)? = nil,
+    public init(getPresentable: @escaping (Void) -> ViewController,
+                setChild: ((ViewController) -> Void)? = nil,
                 setChildren: (([ViewController]) -> Void)? = nil) {
         self.getPresentable = getPresentable
         if let setChild = setChild {

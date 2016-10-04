@@ -1,7 +1,7 @@
 import UIKit
 import FeatherweightRouter
 
-func step2Presenter(store: AppStore) -> UIPresenter {
+func step2Presenter(_ store: AppStore) -> UIPresenter {
 
     let viewController = MockViewController(MockViewModel(
         store: store,

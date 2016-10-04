@@ -1,7 +1,7 @@
 import UIKit
 import FeatherweightRouter
 
-func registrationPresenter(store: AppStore) -> UIPresenter {
+func registrationPresenter(_ store: AppStore) -> UIPresenter {
 
     let viewController = MockViewController(MockViewModel(
         store: store,

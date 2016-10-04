@@ -3,9 +3,9 @@ import UIKit
 // Source: https://www.mikeash.com/pyblog/friday-qa-2015-12-25-swifty-targetaction.html
 
 class ActionTrampoline<T>: NSObject {
-    var action: T -> Void
+    var action: (T) -> Void
 
-    init(action: T -> Void) {
+    init(action: @escaping (T) -> Void) {
         self.action = action
     }
 
@@ -15,17 +15,19 @@ class ActionTrampoline<T>: NSObject {
     }
 }
 
-let uiControlAssociatedFunctionObject = UnsafeMutablePointer<Int8>.alloc(1)
+let uiControlAssociatedFunctionObject = UnsafeMutablePointer<Int8>.allocate(capacity: 1)
 
 protocol UIControlActionFunctionProtocol { }
 
 extension UIControlActionFunctionProtocol where Self: UIControl {
 
-    func addAction(events: UIControlEvents, _ action: Self -> Void) {
+    func addAction(events: UIControlEvents, _ action: @escaping (Self) -> Void) {
         let trampoline = ActionTrampoline(action: action)
-        self.addTarget(trampoline, action: "action:", forControlEvents: events)
+        self.addTarget(trampoline,
+                       action: #selector(ActionTrampoline<UIControl>.action(sender:)),
+                       for: events)
         objc_setAssociatedObject(self, uiControlAssociatedFunctionObject,
-            trampoline, .OBJC_ASSOCIATION_RETAIN)
+                                 trampoline, .OBJC_ASSOCIATION_RETAIN)
     }
 }
 

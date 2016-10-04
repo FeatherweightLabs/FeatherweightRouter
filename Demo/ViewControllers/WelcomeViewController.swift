@@ -25,15 +25,15 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loginButton.addAction(.TouchUpInside) { [unowned self] _ in
+        loginButton.addAction(events: .touchUpInside) { [unowned self] _ in
             self.viewModel.navigateToLogin()
         }
 
-        registerButton.addAction(.TouchUpInside) { [unowned self] _ in
+        registerButton.addAction(events: .touchUpInside) { [unowned self] _ in
             self.viewModel.navigateToRegister()
         }
 
-        step2Button.addAction(.TouchUpInside) { [unowned self] _ in
+        step2Button.addAction(events: .touchUpInside) { [unowned self] _ in
             self.viewModel.navigateToStep2()
         }
 

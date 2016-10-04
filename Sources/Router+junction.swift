@@ -28,7 +28,7 @@ extension Router {
 
                 if let junction = junctions.pickFirst({ $0.handlesRoute(path) ? $0 : nil }) {
                     // if a child matches, pass the path to it
-                    junction.setRoute(path)
+                    _ = junction.setRoute(path)
                     // and set it as the active junction
                     router.presenter.set(junction.presentable)
                     return true

@@ -36,9 +36,9 @@ class MockViewController: UIViewController {
 
         titleLabel.text = viewModel.title
 
-        actionButton.setTitle(viewModel.callToActionTitle, forState: .Normal)
+        actionButton.setTitle(viewModel.callToActionTitle, for: UIControlState())
 
-        actionButton.addAction(.TouchUpInside) { [unowned self] _ in
+        actionButton.addAction(events: .touchUpInside) { [unowned self] _ in
             self.viewModel.navigateToAction()
         }
     }

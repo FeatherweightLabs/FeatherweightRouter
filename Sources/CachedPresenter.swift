@@ -1,14 +1,15 @@
 /**
  Creates a lazy wrapper around a presenter creation function that wraps presenter scope, but does
  not get created until invoked.
- 
+
  `(() -> Presentable) -> Presenter<Presentable>`
 
  - parameter createPresentable: callable that returns the presentable item
 
  - returns: Presenter<Presentable>
  */
-public func cachedPresenter<ViewController: AnyObject>(_ createPresentable: @escaping () -> ViewController)
+public func cachedPresenter<ViewController: AnyObject>(
+    _ createPresentable: @escaping () -> ViewController)
     -> Presenter<ViewController> {
 
         weak var presentable: ViewController? = nil

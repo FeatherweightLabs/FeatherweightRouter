@@ -1,7 +1,7 @@
 import UIKit
 import FeatherweightRouter
 
-func navigationPresenter(title: String) -> UIPresenter {
+func navigationPresenter(_ title: String) -> UIPresenter {
 
     let navigationController = UINavigationController()
     navigationController.tabBarItem.title = title
