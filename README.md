@@ -43,17 +43,18 @@ Although the UI should be a projection of State + Path only the Path should be p
 ```swift
 import FeatherweightRouter
 
-func appRouter<Store>(store: Store) -> Router<UIViewController> {
+func appRouter(store: AppStore) -> Router<UIViewController, String> {
 
     return Router(tabBarPresenter()).junction([
-        Router(navigationController(title: "Animals")).stack([
-            Router(animalListPresenter(store)).route("animals", [
-                Router(animalPresenter(store)).route("(?<id>\\w+)"),
+
+        Router(navigationPresenter(title: "Animals")).stack([
+            Router(animalListPresenter(store)).route(predicate: {$0 == "animals"}, children: [
+                Router(animalPresenter(store)).route(predicate: {$0.matches("(?<id>\\w+)")}),
             ]),
         ]),
-        Router(navigationController(title: "Zoos")).stack([
-            Router(zooListPresenter(store)).route("zoos", [
-                Router(zooPresenter(store)).route("(?<id>\\w+)"),
+        Router(navigationPresenter(title: "Zoos")).stack([
+            Router(zooListPresenter(store)).route(predicate: {$0 == "zoos"}, children: [
+                Router(zooPresenter(store)).route(predicate: {$0.matches("(?<id>\\w+)")}),
             ]),
         ]),
     ])
@@ -61,8 +62,8 @@ func appRouter<Store>(store: Store) -> Router<UIViewController> {
 
 func appCoordinator() -> UIViewController {
 
-    let store = createStore(appReducer, nil)
-    let router = appRouter()
+    let store = createStore(reducer: appReducer, initialState: nil)
+    let router = appRouter(store: store)
     store.state.map { $0.route }.subscribe(next: router.setRoute)
 
     return router.presenter
@@ -74,26 +75,6 @@ func appCoordinator() -> UIViewController {
 - **Path / URL**: A String representing the current view or UI state the application is in. This can include hierarchy and view dependent information as parameters or query values. Ie, viewing a user profile
 - **State**: A stream of values over time.
 - **UI**: User Interface: A visual representation of the State that a user can interact with.
-
-## TODO
-
-In order of achievability:
-
-- [X] Decide if routes and routers should be interchangeable
-    - Use a single extendible Router struct type
-- [X] Finalise usage specs
-    - `Router(presenter:).routerModifier(modifier:paramaters:)`
-- [X] Separate all UIKit coupling into protocols
-    - Foundation is now the only dependency (for regex matching)
-- [X] Extendible router creators
-    - `route`, `junction` and `stack` are all extensions on the `Router` type
-- [X] AppKit and TVKit support
-    - The `Router` accepts a generic presenter type. Even command line presentation is as easy as changing out presenters.
-- [ ] Automatic URL scheme support
-
-
-- Ideal API?
-	- StackRouter(:) / Router(stack:)
 
 # License
 
