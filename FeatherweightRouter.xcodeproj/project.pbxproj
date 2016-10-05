@@ -437,6 +437,7 @@
 					7349E73E1C3DD665004A507B = {
 						CreatedOnToolsVersion = 7.2;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					7349E7771C3DD798004A507B = {
 						CreatedOnToolsVersion = 7.2;
@@ -450,6 +451,7 @@
 					737DF5A61D0D6EB200614CC0 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					737DF5AF1D0D6EB200614CC0 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -797,6 +799,7 @@
 		7349E7481C3DD665004A507B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SWIFT_VERSION = 3.0;
 			};
@@ -805,6 +808,7 @@
 		7349E7491C3DD665004A507B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SWIFT_VERSION = 3.0;
 			};
@@ -864,6 +868,7 @@
 		737DF5B91D0D6EB200614CC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
 			};
@@ -872,6 +877,7 @@
 		737DF5BA1D0D6EB200614CC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
 			};
