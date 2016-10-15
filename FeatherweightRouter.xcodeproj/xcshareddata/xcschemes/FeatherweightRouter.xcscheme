@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7349E73E1C3DD665004A507B"
                BuildableName = "FeatherweightRouter.framework"
-               BlueprintName = "FeatherweightRouter-iOS"
+               BlueprintName = "FeatherweightRouter"
                ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7349E7771C3DD798004A507B"
                BuildableName = "FeatherweightRouterTests.xctest"
-               BlueprintName = "FeatherweightRouter-iOSTests"
+               BlueprintName = "FeatherweightRouter-Tests"
                ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -49,7 +49,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7349E7771C3DD798004A507B"
                BuildableName = "FeatherweightRouterTests.xctest"
-               BlueprintName = "FeatherweightRouter-iOSTests"
+               BlueprintName = "FeatherweightRouter-Tests"
                ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -59,7 +59,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7349E73E1C3DD665004A507B"
             BuildableName = "FeatherweightRouter.framework"
-            BlueprintName = "FeatherweightRouter-iOS"
+            BlueprintName = "FeatherweightRouter"
             ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -81,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7349E73E1C3DD665004A507B"
             BuildableName = "FeatherweightRouter.framework"
-            BlueprintName = "FeatherweightRouter-iOS"
+            BlueprintName = "FeatherweightRouter"
             ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -99,7 +99,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7349E73E1C3DD665004A507B"
             BuildableName = "FeatherweightRouter.framework"
-            BlueprintName = "FeatherweightRouter-iOS"
+            BlueprintName = "FeatherweightRouter"
             ReferencedContainer = "container:FeatherweightRouter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
