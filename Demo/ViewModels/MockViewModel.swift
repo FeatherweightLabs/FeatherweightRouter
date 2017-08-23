@@ -6,9 +6,10 @@ struct MockViewModel: ProvidesMockData {
     let title: String
     let callToActionTitle: String
     let navigateToAction: () -> Void
+    var arbitraryArgument: String?
 
     init(store: AppStore, backgroundColor: RGBColor, title: String, callToActionTitle: String,
-        callToActionRoute: String) {
+         callToActionRoute: String, arbitraryArgument: String? = nil) {
 
             self.backgroundColor = backgroundColor
             self.title = title
@@ -17,5 +18,7 @@ struct MockViewModel: ProvidesMockData {
             navigateToAction = {
                 store.dispatchRoute(callToActionRoute)
             }
+        
+            self.arbitraryArgument = arbitraryArgument
     }
 }

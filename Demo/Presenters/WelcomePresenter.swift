@@ -5,5 +5,5 @@ func welcomePresenter(_ store: AppStore) -> UIPresenter {
 
     let viewController = WelcomeViewController(WelcomeViewModel(store: store))
 
-    return Presenter(getPresentable: { viewController })
+    return RoutePresenter(getPresentable: { _ in viewController })
 }

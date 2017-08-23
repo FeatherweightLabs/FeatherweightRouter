@@ -10,6 +10,7 @@ protocol ProvidesMockData {
 class MockViewController: UIViewController {
 
     let viewModel: ProvidesMockData
+    var step: String?
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
@@ -25,6 +26,10 @@ class MockViewController: UIViewController {
         tabBarItem.title = viewModel.title
         tabBarItem.image = UIImage(named: "placeholder-icon")
     }
+    
+    public func setStepNumber(_ step: String) {
+        self.step = step
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +39,7 @@ class MockViewController: UIViewController {
             blue: CGFloat(viewModel.backgroundColor.2) / 255,
             alpha: 1)
 
-        titleLabel.text = viewModel.title
+        titleLabel.text = viewModel.title + (step ?? "")
 
         actionButton.setTitle(viewModel.callToActionTitle, for: UIControlState())
 

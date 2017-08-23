@@ -7,8 +7,8 @@ func navigationPresenter(_ title: String) -> UIPresenter {
     navigationController.tabBarItem.title = title
     navigationController.tabBarItem.image = UIImage(named: "placeholder-icon")
 
-    return Presenter(
-        getPresentable: { navigationController },
+    return RoutePresenter(
+        getPresentable: { _ in navigationController },
         setChild: { _ in },
         setChildren: { navigationController.setViewControllers($0, animated: true) })
 }

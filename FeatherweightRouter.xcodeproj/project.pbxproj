@@ -35,8 +35,6 @@
 		737DC1351D0E68A000704F6C /* RouterRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DC1331D0E68A000704F6C /* RouterRouteTests.swift */; };
 		737DC1371D0E918F00704F6C /* RouterStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DC1361D0E918F00704F6C /* RouterStackTests.swift */; };
 		737DC1381D0E918F00704F6C /* RouterStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DC1361D0E918F00704F6C /* RouterStackTests.swift */; };
-		737DC13A1D0EA46800704F6C /* CachedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DC1391D0EA46800704F6C /* CachedPresenter.swift */; };
-		737DC13B1D0EA46800704F6C /* CachedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DC1391D0EA46800704F6C /* CachedPresenter.swift */; };
 		737DC13D1D0EA69300704F6C /* CachedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DC13C1D0EA69300704F6C /* CachedPresenterTests.swift */; };
 		737DC13E1D0EA69300704F6C /* CachedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DC13C1D0EA69300704F6C /* CachedPresenterTests.swift */; };
 		737DF5A11D0D63A900614CC0 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737DF5A01D0D63A900614CC0 /* PresenterTests.swift */; };
@@ -59,6 +57,8 @@
 		7386DBBD1C5F5C3E00D385A9 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386DBBC1C5F5C3E00D385A9 /* UIKit+Extensions.swift */; };
 		73ED16781C3E2E44003B3827 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */; };
 		73ED167A1C3E2E65003B3827 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */; };
+		D04D96AA1F4DA18100F03703 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE898E1F4D9D1200CD69FC /* String+extensions.swift */; };
+		D0CE898F1F4D9D1200CD69FC /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE898E1F4D9D1200CD69FC /* String+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,7 +110,6 @@
 		73612BC31C3E13B100FD841A /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		737DC1331D0E68A000704F6C /* RouterRouteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterRouteTests.swift; sourceTree = "<group>"; };
 		737DC1361D0E918F00704F6C /* RouterStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterStackTests.swift; sourceTree = "<group>"; };
-		737DC1391D0EA46800704F6C /* CachedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedPresenter.swift; sourceTree = "<group>"; };
 		737DC13C1D0EA69300704F6C /* CachedPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedPresenterTests.swift; sourceTree = "<group>"; };
 		737DC1401D0EAAE400704F6C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		737DC1411D0EAAE400704F6C /* .hound.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .hound.yml; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		7386DBBC1C5F5C3E00D385A9 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		73ED16771C3E2E44003B3827 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		73ED16791C3E2E65003B3827 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		D0CE898E1F4D9D1200CD69FC /* String+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+extensions.swift"; path = "Demo/String+extensions.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +203,6 @@
 				731836C51C5D867B00D5E1C6 /* FeatherweightRouter.h */,
 				731836C61C5D867B00D5E1C6 /* Info.plist */,
 				731836F81C5D87ED00D5E1C6 /* Array+pickFirst.swift */,
-				737DC1391D0EA46800704F6C /* CachedPresenter.swift */,
 				731836FE1C5D87ED00D5E1C6 /* Presenter.swift */,
 				731836FD1C5D87ED00D5E1C6 /* Router.swift */,
 				731836FA1C5D87ED00D5E1C6 /* Router+junction.swift */,
@@ -251,6 +250,7 @@
 				7349E7AC1C3DDA47004A507B /* Assets.xcassets */,
 				7349E7AD1C3DDA47004A507B /* LaunchScreen.storyboard */,
 				7349E7AF1C3DDA47004A507B /* Info.plist */,
+				D0CE898E1F4D9D1200CD69FC /* String+extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -341,7 +341,6 @@
 				7349E73B1C3DD665004A507B /* Frameworks */,
 				7349E73C1C3DD665004A507B /* Headers */,
 				7349E73D1C3DD665004A507B /* Resources */,
-				731837091C5D887C00D5E1C6 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -395,7 +394,6 @@
 				737DF5A31D0D6EB200614CC0 /* Frameworks */,
 				737DF5A41D0D6EB200614CC0 /* Headers */,
 				737DF5A51D0D6EB200614CC0 /* Resources */,
-				737DC1491D0EABA800704F6C /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -523,48 +521,17 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		731837091C5D887C00D5E1C6 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		737DC1491D0EABA800704F6C /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		7349E73A1C3DD665004A507B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				731837011C5D87ED00D5E1C6 /* Array+pickFirst.swift in Sources */,
+				D0CE898F1F4D9D1200CD69FC /* String+extensions.swift in Sources */,
 				731837071C5D87ED00D5E1C6 /* Presenter.swift in Sources */,
 				731837061C5D87ED00D5E1C6 /* Router.swift in Sources */,
 				731837081C5D87ED00D5E1C6 /* Router+stack.swift in Sources */,
 				731837051C5D87ED00D5E1C6 /* Router+route.swift in Sources */,
-				737DC13A1D0EA46800704F6C /* CachedPresenter.swift in Sources */,
 				731837031C5D87ED00D5E1C6 /* Router+junction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +559,7 @@
 				7349E7B71C3DDAD2004A507B /* AppCoordinator.swift in Sources */,
 				731777831C68D8CB00806D29 /* TabBarPresenter.swift in Sources */,
 				7317777E1C68D44F00806D29 /* MockViewModel.swift in Sources */,
+				D04D96AA1F4DA18100F03703 /* String+extensions.swift in Sources */,
 				73ED16781C3E2E44003B3827 /* WelcomeViewModel.swift in Sources */,
 				73612BC51C3E13BD00FD841A /* RegistrationPresenter.swift in Sources */,
 				7317777C1C68D44600806D29 /* AboutPresenter.swift in Sources */,
@@ -615,7 +583,6 @@
 				737DF5C41D0D6FC400614CC0 /* Router.swift in Sources */,
 				737DF5C51D0D6FC400614CC0 /* Router+junction.swift in Sources */,
 				737DF5BE1D0D6F2200614CC0 /* Array+pickFirst.swift in Sources */,
-				737DC13B1D0EA46800704F6C /* CachedPresenter.swift in Sources */,
 				737DF5C71D0D6FC400614CC0 /* Router+stack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,6 +632,7 @@
 		7349E7451C3DD665004A507B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_EMPTY_CONTEXT = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -735,6 +703,7 @@
 		7349E7461C3DD665004A507B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_EMPTY_CONTEXT = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
