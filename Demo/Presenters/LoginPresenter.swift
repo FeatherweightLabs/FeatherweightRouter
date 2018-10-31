@@ -10,5 +10,5 @@ func loginPresenter(_ store: AppStore) -> UIPresenter {
         callToActionTitle: "Go to '/welcome/'",
         callToActionRoute: "welcome"))
 
-    return Presenter(getPresentable: { viewController })
+    return RoutePresenter(getPresentable: { _ in viewController })
 }

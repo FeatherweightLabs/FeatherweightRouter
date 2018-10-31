@@ -1,7 +1,7 @@
 import UIKit
 import FeatherweightRouter
 
-typealias UIPresenter = Presenter<UIViewController>
+typealias UIPresenter = RoutePresenter<UIViewController>
 
 func appCoordinator() -> UIViewController {
 
@@ -11,7 +11,7 @@ func appCoordinator() -> UIViewController {
 
     store.setPath("welcome")
 
-    return router.presentable
+    return router.getPresentable()
 }
 
 func createRouter(_ store: AppStore) -> Router<UIViewController, String> {
@@ -21,7 +21,9 @@ func createRouter(_ store: AppStore) -> Router<UIViewController, String> {
         Router(navigationPresenter("Welcome")).stack([
             Router(welcomePresenter(store)).route(predicate: {$0 == "welcome"}, children: [
                 Router(registrationPresenter(store)).route(predicate: {$0 == "welcome/register"}, children: [
-                    Router(step2Presenter(store)).route(predicate: {$0 == "welcome/register/step2"}),
+                    Router(step2Presenter(store)).route(predicate: {$0.matches("welcome/register/step(?<step>\\d+)")}, arguments: { (path) -> RouteArguments in
+                        return path.capturedGroups(withRegex: "welcome/register/step(?<step>\\d+)")
+                    }),
                 ]),
                 Router(loginPresenter(store)).route(predicate: {$0 == "welcome/login"}),
             ])
